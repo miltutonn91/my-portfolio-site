@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+.soft-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: normal;
+  background: transparent;
+}
+
+.soft-gradient::before,
+.soft-gradient::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* 右側グラデ */
+.soft-gradient--right::before {
+  top: 9rem;
+  right: 9%;
+  width: 150px;
+  height: 150px;
+  background: rgba(248, 244, 217, 0.6);
+  filter: blur(42px);
+}
+
+.soft-gradient--right::after {
+  top: 1.5rem;
+  right: 15%;
+  width: 200px;
+  height: 200px;
+  background: rgba(251, 241, 228, 0.58);
+  filter: blur(38px);
+}
+
+/* 左側グラデ */
+.soft-gradient--left::before {
+  top: 70rem;
+  left: 9%;
+  width: 200px;
+  height: 200px;
+  background: rgba(248, 244, 217, 0.6);
+  filter: blur(42px);
+}
+
+.soft-gradient--left::after {
+  top: 64em;
+  left: 15%;
+  width: 150px;
+  height: 150px;
+  background: rgba(251, 241, 228, 0.58);
+  filter: blur(38px);
+}
+/* globals.css */
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  white-space: nowrap;
+}
+
+
