@@ -8,12 +8,10 @@ export default function FV() {
   const leftRef = useRef<HTMLDivElement | null>(null);
   const [leftHeight, setLeftHeight] = useState<number | null>(null);
 
-  // 左ブロックの高さを取得してstateに保存
+  // 左ブロックの高さを取得して右に反映
   useEffect(() => {
     const updateHeight = () => {
-      if (leftRef.current) {
-        setLeftHeight(leftRef.current.offsetHeight);
-      }
+      if (leftRef.current) setLeftHeight(leftRef.current.offsetHeight);
     };
     updateHeight();
     window.addEventListener("resize", updateHeight);
@@ -22,14 +20,8 @@ export default function FV() {
 
   return (
     <section className="relative bg-white overflow-hidden">
-      {/* ===== 背景 ===== */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundColor: "rgba(255, 225, 208, 0.12)",
-          boxShadow: "0 4px 8px rgba(0,0,0,0.05)",
-        }}
-      />
+      {/* ===== 背景全体 ===== */}
+      <div className="absolute inset-0 z-0" /> {/* ← シャドウ削除 */}
 
       <div
         className="
@@ -40,15 +32,16 @@ export default function FV() {
           py-16 md:py-32
         "
       >
-        {/* ===== 左ブロック ===== */}
+        {/* ===== 左ブロック（画像＋縦書き） ===== */}
         <div
           ref={leftRef}
           className="
-            flex flex-row items-end justify-center
+            flex flex-row items-end justify-start
             gap-4 md:gap-8
-            p-6 md:p-10 
-            md:basis-[60%]
+            p-6 md:p-10
+            md:basis-[50%]
             bg-[rgba(255,225,208,0.25)]
+            shadow-[0_4px_12px_rgba(0,0,0,0.08)]
           "
         >
           {/* 画像 */}
@@ -89,11 +82,12 @@ export default function FV() {
         {/* ===== 右ブロック（高さを左に合わせる） ===== */}
         <div
           className="
-            hidden md:block   /* ← flexをblockに変更！ */
-    md:basis-[30%]
-    bg-[rgba(255,225,208,0.25)]
-    h-full
-    overflow-hidden
+            hidden md:flex 
+            justify-center items-center 
+            p-10 
+            md:basis-[35%]
+            bg-[rgba(255,225,208,0.25)]
+            shadow-[0_4px_12px_rgba(0,0,0,0.08)]
           "
           style={{
             height: leftHeight ? `${leftHeight}px` : "auto",

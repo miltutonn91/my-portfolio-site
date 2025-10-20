@@ -19,7 +19,7 @@ export default function Contact() {
           className="font-[400] text-[48px] md:text-[80px] tracking-[6.4px]"
           style={{
             color: "#A28686",
-            fontFamily: '"Marcellus SC", serif',
+            fontFamily: '"Marcellus", serif',
             lineHeight: "1.1",
           }}
         >
@@ -43,7 +43,7 @@ export default function Contact() {
           <Button
             variant="white"
             className="
-              w-full md:w-auto
+              w-full 
               text-[#726E6E]
               bg-white
               border border-[rgba(0,0,0,0.05)]

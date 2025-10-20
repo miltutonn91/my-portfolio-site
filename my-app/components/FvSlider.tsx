@@ -6,6 +6,8 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
+// slick本体をクライアント限定で読み込み
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 export default function FvSlider() {
@@ -17,7 +19,7 @@ export default function FvSlider() {
 
   if (!mounted) {
     return (
-      <div className="w-full h-full flex items-center justify-center text-gray-400">
+      <div className="w-[clamp(200px,19vw,266px)] h-[344px] flex items-center justify-center text-gray-400">
         Loading...
       </div>
     );
@@ -32,8 +34,8 @@ export default function FvSlider() {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 3000,
-    centerMode: false,
-    centerPadding: "0px",
+    centerMode: true,
+    centerPadding: "12%",
   };
 
   const slides = [
@@ -44,41 +46,40 @@ export default function FvSlider() {
   ];
 
   return (
-    <div className="w-full h-full min-h-[340px] relative overflow-hidden">
+    <div className="w-[clamp(200px,19vw,266px)]">
       <Slider {...settings}>
         {slides.map((s) => (
-          <div key={s.id} className="w-full h-full">
-            <div className="relative w-full h-full min-h-[340px]">
-              <Image
-                src={s.img}
-                alt={s.alt}
-                fill
-                className="object-cover"
-              />
+          <div key={s.id} className="px-3">
+            <div
+              className="relative w-full overflow-hidden rounded-sm"
+              style={{ aspectRatio: "266/344" }}
+            >
+            <Image
+  src={s.img}
+  alt={s.alt}
+  fill
+  className="object-cover"
+  sizes="(max-width:1200px) 23vw, 310px"
+/>
+
             </div>
           </div>
         ))}
       </Slider>
 
+      {/* slick ドットのカスタム */}
       <style jsx global>{`
-        .slick-slider,
-        .slick-list,
-        .slick-track,
-        .slick-slide,
-        .slick-slide > div {
-          width: 100% !important;
-          height: 100% !important;
-          min-height: 340px !important;
+        .slick-dots li button:before {
+          font-size: 14px;
+          color: #bfa7a0;
+          opacity: 1;
         }
-        .slick-list {
-          margin: 0 !important;
-          padding: 0 !important;
-        }
-        .slick-slide {
-          display: block !important;
+        .slick-dots li.slick-active button:before {
+          color: #726e6e;
+          font-size: 16px;
         }
         .slick-dots {
-          bottom: 10px;
+          bottom: -25px;
         }
       `}</style>
     </div>

@@ -17,7 +17,7 @@ export function SectionTitle({ title, subtitle }: SectionTitleProps) {
             {/* 英語タイトル */}
             <h2
             className="text-[55px] text-[#A28686] font-normal leading-none"
-            style={{ fontFamily: "'Marcellus SC', serif" }}
+            style={{ fontFamily: "'Marcellus', serif" }}
             >
             {title}
             </h2>
