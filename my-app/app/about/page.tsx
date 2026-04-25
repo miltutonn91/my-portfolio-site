@@ -5,6 +5,9 @@ import { SectionTitle } from "@/components/ui/section-title";
 import { SectionSubtitle } from "@/components/ui/section-subtitle";
 import { SiReact, SiTailwindcss, SiTypescript } from "react-icons/si";
 import SkillAccordion from "./components/SkillAccordion";
+import Strengths from "./components/Strengths";
+import Contact from "@/components/Contact";
+
 
 
 
@@ -139,7 +142,8 @@ export default function AboutPage() {
     <SkillAccordion />
   </div>
 </section>
-
+<Strengths />
+<Contact />
     </main>
   );
 }
