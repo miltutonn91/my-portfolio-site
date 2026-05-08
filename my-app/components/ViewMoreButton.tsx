@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import { CircleChevronRight } from "lucide-react"
+import { Button } from '@/components/ui/button';
+import { CircleChevronRight } from 'lucide-react';
 
 export function ViewMoreButton() {
   return (
@@ -12,4 +12,3 @@ export function ViewMoreButton() {
     </div>
   );
 }
-

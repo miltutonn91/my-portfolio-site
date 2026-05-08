@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
@@ -11,19 +10,6 @@ import "slick-carousel/slick/slick-theme.css";
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 export default function FvSlider() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <div className="w-[clamp(200px,19vw,266px)] h-[344px] flex items-center justify-center text-gray-400">
-        Loading...
-      </div>
-    );
-  }
 
   const settings = {
     dots: true,
@@ -35,34 +21,60 @@ export default function FvSlider() {
     autoplay: true,
     autoplaySpeed: 3000,
     centerMode: true,
-    centerPadding: "12%",
+    centerPadding: "10%",
   };
 
   const slides = [
-    { id: 1, img: "/images/fv/fv-slide-1.jpg", alt: "Work 1" },
-    { id: 2, img: "/images/fv/fv-slide-2.jpg", alt: "Work 2" },
-    { id: 3, img: "/images/fv/fv-slide-3.jpg", alt: "Work 3" },
-    { id: 4, img: "/images/fv/fv-slide-4.jpg", alt: "Work 4" },
-  ];
+  {
+    id: 1,
+    img: "/images/fv/fv-slide-1.jpg",
+    alt: "Branding Site",
+    link: "https://miltutonn91.github.io/branding_site/",
+  },
+  {
+    id: 2,
+    img: "/images/fv/fv-slide-2.jpg",
+    alt: "EC Site",
+    link: "https://miltutonn91.github.io/EC-site/",
+  },
+  {
+    id: 3,
+    img: "/images/fv/fv-slide-3.jpg",
+    alt: "Farm Branding Site",
+    link: "https://miltutonn91.github.io/farm-branding-site/",
+  },
+  {
+    id: 4,
+    img: "/images/fv/fv-slide-4.jpg",
+    alt: "Sugutable",
+    link: "https://miltutonn91.github.io/sugutabe/",
+  },
+];
 
   return (
-    <div className="w-[clamp(200px,19vw,266px)]">
+    <div className="w-full max-w-[420px]">
       <Slider {...settings}>
         {slides.map((s) => (
           <div key={s.id} className="px-3">
-            <div
-              className="relative w-full overflow-hidden rounded-sm"
-              style={{ aspectRatio: "266/344" }}
-            >
-            <Image
-  src={s.img}
-  alt={s.alt}
-  fill
-  className="object-cover"
-  sizes="(max-width:1200px) 23vw, 310px"
-/>
-
+            <a
+            href={s.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block cursor-pointer group"
+          >
+              <div
+                className="relative w-full overflow-hidden rounded-sm"
+                style={{ aspectRatio: "266/344" }}
+              >
+              <Image
+                src={s.img}
+                alt={s.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width:1200px) 23vw, 310px"
+              />
             </div>
+            </a>
           </div>
         ))}
       </Slider>

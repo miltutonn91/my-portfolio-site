@@ -1,10 +1,10 @@
 import works from '@/data/works';
 import { WorkCard } from '@/components/WorksCard';
-import { SectionTitle } from '@/components/ui/section-title';
+import { SectionTitle } from '@/components/section-title';
 
 export default function Works() {
   return (
-    <section className="relative overflow-visible py-20 bg-white text-[#726E6E]">
+    <section id="works" className="relative overflow-visible py-20 bg-white text-[#6A5C5C]">
       {/* 柔らかいライトのグラデーション */}
       <div className="soft-gradient soft-gradient--right absolute inset-0" />
       <div className="soft-gradient soft-gradient--left absolute inset-0" />

@@ -7,15 +7,15 @@ interface SectionSubtitleProps {
 
 export function SectionSubtitle({ title, subtitle }: SectionSubtitleProps) {
   return (
-    <div className="mb-10 text-left">
+    <div className="mb-8 text-left md:mb-10">
       {/* 英語タイトル行（ライン＋タイトル） */}
       <div className="relative inline-block">
         {/* 左ライン（デザイン用） */}
-        <span className="absolute -left-[40px] top-1/2 transform -translate-y-1/2 w-[35px] h-[1px] bg-[#A28686]" />
+        <span className="absolute -left-[30px] top-1/2 h-[1px] w-[25px] -translate-y-1/2 bg-[#A28686] md:-left-[40px] md:w-[35px]" />
 
         {/* 英語タイトル */}
         <h3
-          className="text-[36px] md:text-[40px] text-[#A28686] font-normal leading-none"
+          className="subsection-heading font-normal"
           style={{ fontFamily: "'Marcellus', serif" }}
         >
           {title}
@@ -24,7 +24,7 @@ export function SectionSubtitle({ title, subtitle }: SectionSubtitleProps) {
 
       {/* 日本語サブタイトル */}
       <p
-        className="text-[14px] md:text-[15px] text-[#A28686] font-normal mt-[4px] ml-[2px]"
+        className="mt-[4px] ml-[2px] text-[0.8125rem] font-normal tracking-[0.04em] text-[#A28686] md:text-[0.9375rem]"
         style={{ fontFamily: "'Noto Sans JP', sans-serif" }}
       >
         {subtitle}

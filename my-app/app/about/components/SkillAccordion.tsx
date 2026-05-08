@@ -6,7 +6,6 @@ import WebDevelopmentAccordion from "./WebDevelopmentAccordion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 
 export default function SkillAccordion() {
-  // ✅ 複数同時に開けるように変更（配列で管理）
   const [open, setOpen] = useState<string[]>([]);
 
   const toggle = (key: string) => {
@@ -18,98 +17,88 @@ export default function SkillAccordion() {
   };
 
   return (
-    <div className="max-w-[620px] mx-auto flex flex-col gap-[157px] pt-[100px]">
+    <div className="mx-auto flex max-w-[720px] flex-col gap-14 pt-10 md:gap-24 md:pt-20">
       {/* Web Design */}
-      <div className="flex flex-col gap-[50px] items-center">
-        <div className="flex items-center gap-[36px]">
-          <div className="relative w-[253px] h-[169px]">
+      <div className="flex flex-col items-center gap-6 md:gap-9">
+        <div className="flex w-full flex-col items-center gap-6 md:flex-row md:items-center md:gap-12">
+          <div className="relative h-[150px] w-[225px] md:h-[190px] md:w-[285px]">
             <img
               src="/images/about/skill-1.jpg"
               alt="Web Design"
-              className="object-cover w-full h-full"
+              className="h-full w-full object-cover"
             />
           </div>
 
-          <div className="w-[329px] text-left">
-            <h3 className="text-[#A28686] text-[22px] font-semibold tracking-[0.66px] leading-[24px] mb-[31px]">
+          <div className="w-full max-w-[380px] text-left">
+            <h3 className="category-heading mb-4 md:mb-6">
               Web design
             </h3>
-            <p className="text-[#726F6F] text-[12px] leading-[24px] tracking-[0.36px]">
+
+            <p className="body-text">
               Webサイト、バナーの制作をすることができます。ユーザーが操作に迷うことのないシンプルでわかりやすいデザインを心がけながら、些細なところまで丁寧に作り込むようにしています。
             </p>
           </div>
         </div>
 
-        <div
-          className="flex items-center gap-[36px] cursor-pointer"
+        <button
+          type="button"
+          className="flex cursor-pointer items-center gap-4 md:gap-6"
           onClick={() => toggle("design")}
         >
-          <div
-            className="
-              border border-[rgba(0,0,0,0.3)]
-              rounded-full w-[51px] h-[51px]
-              flex items-center justify-center
-              text-[#5A86B9] text-[28px]
-              transition-transform duration-200
-            "
-          >
+          <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full border border-[rgba(0,0,0,0.3)] text-[24px] text-[#A28686] transition-transform duration-200 md:h-[52px] md:w-[52px] md:text-[28px]">
             {open.includes("design") ? <FiMinus /> : <FiPlus />}
-          </div>
-          <p className="text-[14px] tracking-[0.42px] text-[#726F6F]">
+          </span>
+
+          <span className="body-text-small">
             スキルを詳しくみる
-          </p>
-        </div>
+          </span>
+        </button>
 
         {open.includes("design") && (
-          <div className="mt-[40px]">
+          <div className="mt-1 w-full md:mt-3">
             <WebDesignAccordion />
           </div>
         )}
       </div>
 
       {/* Web Development */}
-      <div className="flex flex-col gap-[50px] items-center">
-        <div className="flex items-center gap-[36px]">
-          <div className="relative w-[254px] h-[169px]">
+      <div className="flex flex-col items-center gap-6 md:gap-9">
+        <div className="flex w-full flex-col items-center gap-6 md:flex-row md:items-center md:gap-12">
+          <div className="relative h-[150px] w-[225px] md:h-[190px] md:w-[285px]">
             <img
               src="/images/about/skill-2.jpg"
               alt="Web Development"
-              className="object-cover w-full h-full"
+              className="h-full w-full object-cover"
             />
           </div>
 
-          <div className="w-[329px] text-left">
-            <h3 className="text-[#A28686] text-[22px] font-semibold tracking-[0.66px] leading-[24px] mb-[31px]">
+          <div className="w-full max-w-[380px] text-left">
+            <h3 className="category-heading mb-4 md:mb-6">
               Web development
             </h3>
-            <p className="text-[#726F6F] text-[12px] leading-[24px] tracking-[0.36px]">
+
+            <p className="body-text">
               デザインカンプを忠実に再現することができます。規則性のある命名をし、誰が見てもわかりやすいコードを書くことを心がけています。
             </p>
           </div>
         </div>
 
-        <div
-          className="flex items-center gap-[36px] cursor-pointer"
+        <button
+          type="button"
+          className="flex cursor-pointer items-center gap-4 md:gap-6"
           onClick={() => toggle("dev")}
         >
-          <div
-            className="
-              border border-[rgba(0,0,0,0.3)]
-              rounded-full w-[51px] h-[51px]
-              flex items-center justify-center
-              text-[#5A86B9] text-[28px]
-              transition-transform duration-200
-            "
-          >
+          <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full border border-[rgba(0,0,0,0.3)] text-[24px] text-[#A28686] transition-transform duration-200 md:h-[52px] md:w-[52px] md:text-[28px]">
             {open.includes("dev") ? <FiMinus /> : <FiPlus />}
-          </div>
-          <p className="text-[14px] tracking-[0.42px] text-[#726F6F]">
+          </span>
+
+          <span className="body-text-small">
             スキルを詳しくみる
-          </p>
-        </div>
+          </span>
+        </button>
 
         {open.includes("dev") && (
-          <div className="mt-[40px]">
+          <div className="mt-1 w-full md:mt-3">
             <WebDevelopmentAccordion />
           </div>
         )}

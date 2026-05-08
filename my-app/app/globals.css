@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Marchells&display=swap');
 
 
 .soft-gradient {
@@ -56,11 +55,140 @@
   background: rgba(251, 241, 228, 0.58);
   filter: blur(38px);
 }
-/* globals.css */
+
 .writing-vertical {
   writing-mode: vertical-rl;
   text-orientation: upright;
   white-space: nowrap;
 }
+.menu-link {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #A28686;
+  transition: width 0.3s ease;
+}
+
+.menu-link:hover {
+  color: #A28686;
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+.work-number {
+  text-shadow:
+    0.04em 0.03em 0 rgba(255, 255, 255, 0.9),
+    0.09em 0.06em 0 rgba(199, 163, 163, 0.38),
+    0 12px 22px rgba(162, 134, 134, 0.24);
+}
 
 
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(300%);
+  }
+}
+
+.animate-scrollLine {
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+/* 1. セクション題名：About / Works / Contact など */
+.section-heading {
+  font-size: 2.25rem; /* 36px */
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  color: #A28686;
+}
+
+@media screen and (min-width: 768px) {
+  .section-heading {
+    font-size: 3rem; /* 48px */
+  }
+}
+
+/* 2. サブセクション見出し：Skill / Strengths / Career など */
+.subsection-heading {
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.35;
+  letter-spacing: 0.06em;
+  color: #A28686;
+}
+
+@media screen and (min-width: 768px) {
+  .subsection-heading {
+    font-size: 2rem; /* 32px */
+  }
+}
+
+/* 3. カテゴリ見出し：Web design / Web development など */
+.category-heading {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: #A28686;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .category-heading {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+/* 4. 小項目：Illustrator / Photoshop / HTML / CSS など */
+.item-heading {
+  font-size: 0.9375rem; /* 15px */
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #5F5555;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .item-heading {
+    font-size: 1.0625rem; /* 17px */
+  }
+}
+
+/* 5. 本文 */
+.body-text {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: #6A5C5C;
+}
+
+@media screen and (min-width: 768px) {
+  .body-text {
+    font-size: 1rem; /* 16px */
+    line-height: 1.95;
+  }
+}
+
+/* 6. グローバルナビ */
+.global-nav-text {
+  font-size: 0.8125rem; /* 13px */
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  color: #6A5C5C;
+}
+
+@media screen and (min-width: 768px) {
+  .global-nav-text {
+    font-size: 0.875rem; /* 14px */
+  }
+}
