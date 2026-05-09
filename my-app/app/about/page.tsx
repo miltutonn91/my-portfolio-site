@@ -48,7 +48,7 @@ export default function AboutPage() {
               </div>
 
               <p className="body-text max-w-[520px] whitespace-pre-line mb-6">
-                1998年生まれ。愛知県出身。前職は看護師です。
+                1998年生まれ。愛知県出身。職業は看護師です。
               </p>
               <p className="body-text max-w-[520px] whitespace-pre-line mb-6">
                 “ゼロから形にしていく創造の過程”に強く惹かれ、フロントエンドエンジニアを目指すことを決意。
