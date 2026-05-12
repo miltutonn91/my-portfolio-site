@@ -137,7 +137,7 @@ const works: Work[] = [
   id: 3,
 
   image: "/images/works/pc3.jpg",
-  detailImage: "/images/fv/fv-slide-4.jpg",
+  detailImage: "/images/fv/fv-slide-3.jpg",
 
   title: "宅配野菜 LPサイト",
 
@@ -183,7 +183,7 @@ const works: Work[] = [
   id: 4,
 
   image: "/images/works/pc4.jpg",
-  detailImage: "/images/fv/fv-slide-3.jpg",
+  detailImage: "/images/fv/fv-slide-4.jpg",
 
   title: "蓼科ごとう農園サイト",
 

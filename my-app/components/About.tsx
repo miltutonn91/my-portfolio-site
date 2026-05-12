@@ -26,6 +26,7 @@ export default function About() {
           {/* 左側：テキスト */}
           <div className="flex flex-col text-left md:w-1/2 md:justify-between">
             <div>
+              {/* 名前 */}
               <div className="flex flex-wrap items-baseline gap-x-[14px] gap-y-2">
                 <p className="font-['Noto_Sans'] text-[24px] font-normal leading-none md:text-[28px]">
                   {about.name}
@@ -35,7 +36,21 @@ export default function About() {
                 </p>
               </div>
 
-              <p className="mt-8 max-w-[480px] whitespace-pre-line text-[14px] font-normal leading-loose tracking-[0.42px] md:mt-[70px]">
+              {/* スマホ用画像：名前の下に表示 */}
+              <div className="mt-8 flex justify-center md:hidden">
+                <div className="relative h-[320px] w-[240px] sm:h-[360px] sm:w-[270px]">
+                  <Image
+                    src={about.image}
+                    alt={about.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 240px"
+                  />
+                </div>
+              </div>
+
+              {/* 説明文 */}
+              <p className="body-text mt-8 max-w-[480px] whitespace-pre-line md:mt-10">
                 {about.description}
               </p>
             </div>
@@ -54,15 +69,15 @@ export default function About() {
             </div>
           </div>
 
-          {/* 右側：画像 */}
-          <div className="flex justify-center md:w-1/2 md:items-stretch">
-            <div className="relative h-[320px] w-[240px] sm:h-[360px] sm:w-[270px] md:h-[370px] md:w-[280px]">
+          {/* 右側：PC用画像 */}
+          <div className="hidden justify-center md:flex md:w-1/2 md:items-stretch">
+            <div className="relative h-[370px] w-[280px]">
               <Image
                 src={about.image}
                 alt={about.name}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 240px, 280px"
+                sizes="280px"
               />
             </div>
           </div>

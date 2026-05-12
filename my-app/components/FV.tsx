@@ -1,28 +1,23 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import FvSlider from './FvSlider';
 
 export default function FV() {
-  const leftRef = useRef<HTMLDivElement | null>(null);
-  const [leftHeight, setLeftHeight] = useState<number | null>(null);
-
-  useEffect(() => {
-    const updateHeight = () => {
-      if (leftRef.current) setLeftHeight(leftRef.current.offsetHeight);
-    };
-
-    updateHeight();
-    window.addEventListener('resize', updateHeight);
-
-    return () => window.removeEventListener('resize', updateHeight);
-  }, []);
-
   return (
     <section id="top" className="relative overflow-hidden bg-white">
-      {/* ===== ヘッダー（スマホは通常配置 / PCは左上固定） ===== */}
-      <div className="relative z-10 px-5 pt-8 pb-4 md:absolute md:left-6 md:top-8 md:p-0">
+      {/* ===== ヘッダー：1000px以下は通常配置 ===== */}
+      <div className="relative z-10 bg-white px-6 pb-5 pt-8 lg:hidden">
+        <p className="font-[Marcellus] text-[clamp(16px,4.2vw,22px)] tracking-[0.08em] text-[#A28686]">
+          Umeda Misa Portfolio
+        </p>
+        <p className="mt-1 font-[Marcellus] text-[clamp(10px,2.8vw,14px)] text-[#A28686]">
+          — Frontend Engineer
+        </p>
+      </div>
+
+      {/* ===== ヘッダー：PCのみabsolute ===== */}
+      <div className="absolute left-6 top-8 z-10 hidden lg:block">
         <p className="font-[Marcellus] text-[clamp(16px,1.5vw,22px)] tracking-[0.08em] text-[#A28686]">
           Umeda Misa Portfolio
         </p>
@@ -31,83 +26,103 @@ export default function FV() {
         </p>
       </div>
 
+      {/* ===== 背景全体 ===== */}
+      <div className="absolute inset-0 z-0" />
+
       <div
         className="
           relative z-[1]
-          flex w-full flex-col justify-between
-          pb-16 pt-4
-          md:flex-row md:py-32
+          grid w-full grid-cols-1
+          py-0
+          lg:grid-cols-2 lg:py-32
         "
       >
-        {/* ===== 左ブロック（画像＋セリフ） ===== */}
+        {/* ===== 左ブロック（画像＋メッセージ） ===== */}
         <div
-          ref={leftRef}
           className="
-            flex w-full justify-center
+            flex items-center justify-center
             bg-[rgba(255,225,208,0.25)]
-            px-5 py-8
+            px-4 py-6
             shadow-[0_4px_12px_rgba(0,0,0,0.08)]
-            md:basis-[50%]
-            md:flex-row md:items-end md:justify-start
-            md:gap-8 md:p-10
+            min-[480px]:p-6
+            lg:p-10
           "
+        >
+          <div
+            className="
+              grid w-full max-w-[560px]
+              grid-cols-[minmax(0,1fr)_auto]
+              items-end justify-center
+              gap-3
+              min-[480px]:gap-4
+              lg:flex lg:gap-8
+            "
           >
-          {/* 画像＋スマホ用セリフを重ねる枠 */}
-          <div className="relative w-[min(78vw,320px)] flex-shrink-0 pb-24 md:w-[clamp(260px,27.6vw,398px)] md:pb-0">
-            <div style={{ aspectRatio: '398 / 513' }} className="relative w-full">
-              <Image
-                src="/images/fv/fv-img.jpg"
-                alt="プロフィール"
-                fill
-                priority
-                className="object-contain transition-all duration-300"
-                sizes="(max-width: 768px) 78vw, (max-width: 1200px) 50vw, 27.6vw"
-              />
+            {/* 画像 */}
+            <div className="relative min-w-0 lg:w-[clamp(260px,27.6vw,398px)] lg:flex-shrink-0">
+              <div style={{ aspectRatio: '398 / 513' }} className="relative w-full">
+                <Image
+                  src="/images/fv/fv-img.jpg"
+                  alt="プロフィール"
+                  fill
+                  priority
+                  className="object-contain transition-all duration-300"
+                  sizes="(max-width: 1024px) 65vw, (max-width: 1200px) 50vw, 27.6vw"
+                />
+              </div>
             </div>
 
-            {/* スマホ用：写真右下に重ねる */}
-            <div className="absolute bottom-4 right-[-6px] w-[88%] bg-[rgba(255,255,255,0.94)] px-4 py-4 text-left text-[#4F4A4A] shadow-[0_6px_18px_rgba(0,0,0,0.12)] md:hidden">
-              <p className="text-[clamp(0.875rem,3.8vw,1rem)] leading-[1.75] tracking-[0.04em]">
-                見える・動く、その先にある
-                <br />
-                <span className="font-bold text-[#3A3A3A]">伝わる</span> Web体験を形にしたい
-              </p>
-            </div>
-          </div>
-          {/* PC用 */}
-          <div className="hidden justify-start items-end translate-y-[-8px] md:flex md:translate-y-0">
-            <div className="h-fit self-end bg-[rgba(255,255,255,0.85)] px-8 py-6 text-[#6A5C5C] leading-[2.4] shadow-[0_3px_3px_rgba(0,0,0,0.08)]">
-              <p
-                className="[writing-mode:vertical-rl] [text-orientation:upright] flex flex-col items-end"
-                style={{
-                  justifyContent: 'flex-end',
-                  fontSize: 'clamp(12px, 1.8vw, 20px)',
-                }}
+            {/* メッセージ */}
+            <div className="flex items-end justify-center">
+              <div
+                className="
+                  h-fit
+                  bg-[rgba(255,255,255,0.85)]
+                  px-2.5 py-2.5
+                  text-[#6A5C5C]
+                  shadow-[0_3px_3px_rgba(0,0,0,0.08)]
+                  min-[480px]:px-4 min-[480px]:py-4
+                  md:px-5 md:py-5
+                  lg:px-6 lg:py-5
+                  xl:px-8 xl:py-6
+                "
               >
-                <span className="block">見える・動く、その先にある</span>
-                <span className="block">
-                  <span className="font-bold text-[#3A3A3A]">伝わる</span> Web体験を
-                </span>
-                <span className="block">形にしたい</span>
-              </p>
+                <p
+                  className="
+                    [writing-mode:vertical-rl]
+                    [text-orientation:upright]
+                    flex flex-col items-end
+                    text-[12px]
+                    leading-[1.95]
+                    min-[480px]:text-[14px]
+                    sm:text-[15px]
+                    md:text-[16px]
+                    lg:text-[17px]
+                    xl:text-[20px]
+                    lg:leading-[2.35]
+                  "
+                >
+                  <span className="block">見える・動く、その先にある</span>
+                  <span className="block">
+                    <span className="font-bold text-[#3A3A3A]">伝わる</span> Web体験を
+                  </span>
+                  <span className="block">形にしたい</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ===== 右ブロック（PCのみ） ===== */}
+        {/* ===== 右ブロック（PCのみスライダー） ===== */}
         <div
           className="
             hidden
-            justify-center items-center
+            items-center justify-center
             bg-[rgba(255,225,208,0.25)]
-            p-4
+            p-6
             shadow-[0_4px_12px_rgba(0,0,0,0.08)]
-            md:flex md:basis-[45%]
+            lg:flex lg:p-10
           "
-          style={{
-            height: leftHeight ? `${leftHeight}px` : 'auto',
-            transition: 'height 0.3s ease',
-          }}
         >
           <div className="flex w-full justify-center">
             <FvSlider />

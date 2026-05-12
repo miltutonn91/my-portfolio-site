@@ -8,7 +8,6 @@ export default function Footer() {
   const handleTopClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
-    // TOPページにいる時は、その場で上へスクロール
     if (window.location.pathname === "/") {
       const topElement = document.getElementById("top");
 
@@ -27,8 +26,26 @@ export default function Footer() {
       return;
     }
 
-    // Aboutページなど別ページにいる時は、TOPページの#topへ移動
     window.location.href = "/#top";
+  };
+
+  const handleWorksClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    if (window.location.pathname === "/") {
+      const worksElement = document.getElementById("works");
+
+      if (worksElement) {
+        worksElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      return;
+    }
+
+    window.location.href = "/#works";
   };
 
   return (
@@ -42,7 +59,11 @@ export default function Footer() {
           Top
         </Link>
 
-        <Link href="/#works" className="global-nav-text hover:opacity-60">
+        <Link
+          href="/#works"
+          onClick={handleWorksClick}
+          className="global-nav-text hover:opacity-60"
+        >
           Works
         </Link>
 
