@@ -49,68 +49,72 @@ export default function FV() {
           "
         >
           <div
-            className="
-              grid w-full max-w-[560px]
-              grid-cols-[minmax(0,1fr)_auto]
-              items-end justify-center
-              gap-3
-              min-[480px]:gap-4
-              lg:flex lg:gap-8
-            "
-          >
-            {/* 画像 */}
-            <div className="relative min-w-0 lg:w-[clamp(260px,27.6vw,398px)] lg:flex-shrink-0">
-              <div style={{ aspectRatio: '398 / 513' }} className="relative w-full">
-                <Image
-                  src="/images/fv/fv-img.jpg"
-                  alt="プロフィール"
-                  fill
-                  priority
-                  className="object-contain transition-all duration-300"
-                  sizes="(max-width: 1024px) 65vw, (max-width: 1200px) 50vw, 27.6vw"
-                />
-              </div>
-            </div>
+  className="
+    grid w-full max-w-[560px]
+    grid-cols-[60%_40%]
+    items-end justify-center
+    gap-2
+    min-[480px]:grid-cols-[64%_36%]
+    min-[480px]:gap-4
+    md:flex md:gap-4
+    lg:gap-8
+  "
+>
+  {/* 画像 */}
+  <div className="relative w-full min-w-0 md:w-[min(58vw,300px)] md:flex-shrink-0 lg:w-[clamp(260px,27.6vw,398px)]">
+    <div style={{ aspectRatio: '398 / 513' }} className="relative w-full">
+      <Image
+        src="/images/fv/fv-img.jpg"
+        alt="プロフィール"
+        fill
+        priority
+        className="object-contain transition-all duration-300"
+        sizes="(max-width: 480px) 55vw, (max-width: 768px) 58vw, (max-width: 1200px) 50vw, 27.6vw"
+      />
+    </div>
+  </div>
 
-            {/* メッセージ */}
-            <div className="flex items-end justify-center">
-              <div
-                className="
-                  h-fit
-                  bg-[rgba(255,255,255,0.85)]
-                  px-2.5 py-2.5
-                  text-[#6A5C5C]
-                  shadow-[0_3px_3px_rgba(0,0,0,0.08)]
-                  min-[480px]:px-4 min-[480px]:py-4
-                  md:px-5 md:py-5
-                  lg:px-6 lg:py-5
-                  xl:px-8 xl:py-6
-                "
-              >
-                <p
-                  className="
-                    [writing-mode:vertical-rl]
-                    [text-orientation:upright]
-                    flex flex-col items-end
-                    text-[12px]
-                    leading-[1.95]
-                    min-[480px]:text-[14px]
-                    sm:text-[15px]
-                    md:text-[16px]
-                    lg:text-[17px]
-                    xl:text-[20px]
-                    lg:leading-[2.35]
-                  "
-                >
-                  <span className="block">見える・動く、その先にある</span>
-                  <span className="block">
-                    <span className="font-bold text-[#3A3A3A]">伝わる</span> Web体験を
-                  </span>
-                  <span className="block">形にしたい</span>
-                </p>
-              </div>
-            </div>
-          </div>
+  {/* メッセージ */}
+  <div className="flex w-full items-end justify-center md:w-auto">
+    <div
+      className="
+        h-fit w-full
+        bg-[rgba(255,255,255,0.85)]
+        px-3 py-3
+        text-[#6A5C5C]
+        shadow-[0_3px_3px_rgba(0,0,0,0.08)]
+        min-[480px]:px-4 min-[480px]:py-4
+        md:w-auto md:px-5 md:py-5
+        lg:px-6 lg:py-5
+        xl:px-8 xl:py-6
+      "
+    >
+      <p
+        className="
+          [writing-mode:vertical-rl]
+          [text-orientation:upright]
+          mx-auto
+          flex flex-col items-end
+          text-[12px]
+          leading-[1.9]
+          min-[390px]:text-[13px]
+          min-[480px]:text-[14px]
+          sm:text-[15px]
+          md:text-[16px]
+          lg:text-[17px]
+          xl:text-[20px]
+          lg:leading-[2.35]
+        "
+      >
+        <span className="block">見える・動く、その先にある</span>
+        <span className="block">
+          <span className="font-bold text-[#3A3A3A]">伝わる</span> Web体験を
+        </span>
+        <span className="block">形にしたい</span>
+      </p>
+    </div>
+  </div>
+</div>
         </div>
 
         {/* ===== 右ブロック（PCのみスライダー） ===== */}
