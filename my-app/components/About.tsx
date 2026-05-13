@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CircleChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { SectionTitle } from '@/components/section-title';
+import { SectionTitle } from '@/components/ui/section-title';
 import { about } from '@/data/about';
 
 export default function About() {

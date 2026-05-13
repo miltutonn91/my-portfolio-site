@@ -1,15 +1,15 @@
 'use client';
 
 import Image from 'next/image';
-import { SectionTitle } from '@/components/section-title';
-import { SectionSubtitle } from '@/components/section-subtitle';
+import { SectionTitle } from '@/components/ui/section-title';
+import { SectionSubtitle } from '@/components/ui/section-subtitle';
 import SkillAccordion from './components/SkillAccordion';
 import Strengths from './components/Strengths';
 import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
-import HamburgerMenu from '@/components/HamburgerMenu';
-import ScrollTopButton from '@/components/ScrollTopButton';
-import ScrollIndicator from '@/components/ScrollIndicator';
+import Footer from '@/components/ui/Footer';
+import HamburgerMenu from '@/components/ui/HamburgerMenu';
+import ScrollTopButton from '@/components/ui/ScrollTopButton';
+import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
 export default function AboutPage() {
   return (

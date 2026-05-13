@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/earlyaccess/harenosora.css");
 @import "tailwindcss";
-@import "tw-animate-css";
+@source "../app";
+@source "../components";
+@source "../components/ui";
 
+.font-hina {
+  font-family: var(--font-hina-mincho), serif;
+}
 
 .soft-gradient {
   position: absolute;
@@ -96,22 +102,56 @@
 @keyframes scrollLine {
   0% {
     transform: translateY(-100%);
+    opacity: 0;
   }
+  30% {
+    opacity: 1;
+  }
+
   100% {
     transform: translateY(300%);
+    opacity: 0;
+  }
+}
+@keyframes worksFlowX {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
   }
 }
 
-.animate-scrollLine {
-  animation: scrollLine 1.8s ease-in-out infinite;
+@keyframes worksFlowY {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-50%);
+  }
 }
 
-/* 1. セクション題名：About / Works / Contact など */
-.section-heading {
-  font-size: 2.25rem; /* 36px */
-  line-height: 1.2;
-  letter-spacing: 0.06em;
-  color: #A28686;
+.works-flow {
+  animation: worksFlowX 24s linear infinite;
+  will-change: transform;
+}
+
+.works-flow:hover {
+  animation-play-state: paused;
+}
+
+@media screen and (min-width: 1024px) {
+  .works-flow {
+    animation-name: worksFlowY;
+  }
+}
+
+
+
+.animate-scrollLine {
+  animation: scrollLine 1.6s ease-in-out infinite;
 }
 
 @media screen and (min-width: 768px) {
