@@ -1,4 +1,4 @@
-// components/HamburgerMenu.tsx
+// components/ui/HamburgerMenu.tsx
 
 "use client";
 
@@ -8,44 +8,49 @@ import Link from "next/link";
 type HamburgerMenuProps = {
   isAboutPage?: boolean;
   isWorksDetailPage?: boolean;
+  position?: "fixed" | "absolute";
 };
 
 export default function HamburgerMenu({
   isAboutPage = false,
   isWorksDetailPage = false,
+  position = "fixed",
 }: HamburgerMenuProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const positionClass =
+    position === "absolute"
+      ? "absolute right-8 top-8"
+      : "fixed right-5 top-5 md:right-6 md:top-6";
 
   return (
     <>
       <button
-        type="button"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="fixed top-6 right-6 z-[100] flex h-8 w-8 cursor-pointer flex-col items-center justify-center"
         aria-label="メニューを開く"
+        className={`
+        ${positionClass}
+        z-[999]
+        flex h-10 w-10 cursor-pointer items-center justify-center
+      `}
       >
         <span
-          className={`absolute block h-[1.3px] w-8 bg-[#A8A5A5] transition-all duration-300 ${
-            isMenuOpen ? "rotate-45" : "-translate-y-3"
+          className={`absolute block h-[1.1px] w-6 bg-[#5F5555] transition-all duration-300 ${
+            isMenuOpen ? "rotate-45" : "-translate-y-2"
           }`}
         />
         <span
-          className={`absolute block h-[1.3px] w-8 bg-[#A8A5A5] transition-all duration-300 ${
+          className={`absolute block h-[1.1px] w-6 bg-[#5F5555] transition-all duration-300 ${
             isMenuOpen ? "opacity-0" : "opacity-100"
           }`}
         />
         <span
-          className={`absolute block h-[1.3px] w-8 bg-[#A8A5A5] transition-all duration-300 ${
-            isMenuOpen ? "-rotate-45" : "translate-y-3"
+          className={`absolute block h-[1.1px] w-6 bg-[#5F5555] transition-all duration-300 ${
+            isMenuOpen ? "-rotate-45" : "translate-y-2"
           }`}
         />
       </button>
 
-      {/* 背景オーバーレイ
-          スマホ：全面ホワイト系
-          PC：全面ピンク系
-      */}
       <div
         onClick={() => setIsMenuOpen(false)}
         className={`
@@ -62,10 +67,9 @@ export default function HamburgerMenu({
         `}
       />
 
-      {/* 右から出るパネル：PCだけ表示 */}
       <div
         className={`
-          fixed top-0 right-0 z-[90] hidden h-full w-1/2
+          fixed right-0 top-0 z-[90] hidden h-full w-1/2
           bg-[#F8F6F2]/80
           transition-transform duration-500 ease-out
           md:block
@@ -79,7 +83,7 @@ export default function HamburgerMenu({
 
       <nav
         className={`
-          fixed top-32 right-10 z-[95]
+          fixed right-10 top-32 z-[95]
           transition-all duration-500 ease-out
           md:right-20
           ${
@@ -92,7 +96,11 @@ export default function HamburgerMenu({
         <ul className="flex flex-col gap-10 text-[1.25rem] tracking-[0.08em] text-[#5A5A5A] md:gap-12 md:text-[1.375rem]">
           {(isAboutPage || isWorksDetailPage) && (
             <li>
-              <Link href="/#top" onClick={() => setIsMenuOpen(false)} className="menu-link">
+              <Link
+                href="/#top"
+                onClick={() => setIsMenuOpen(false)}
+                className="menu-link"
+              >
                 トップ
               </Link>
             </li>
@@ -100,7 +108,11 @@ export default function HamburgerMenu({
 
           {!isWorksDetailPage && (
             <li>
-              <Link href="/#works" onClick={() => setIsMenuOpen(false)} className="menu-link">
+              <Link
+                href="/#works"
+                onClick={() => setIsMenuOpen(false)}
+                className="menu-link"
+              >
                 制作物
               </Link>
             </li>
@@ -108,14 +120,22 @@ export default function HamburgerMenu({
 
           {(!isAboutPage || isWorksDetailPage) && (
             <li>
-              <Link href="/about#top" onClick={() => setIsMenuOpen(false)} className="menu-link">
+              <Link
+                href="/about#top"
+                onClick={() => setIsMenuOpen(false)}
+                className="menu-link"
+              >
                 わたしのこと
               </Link>
             </li>
           )}
 
           <li>
-            <Link href="/#contact" onClick={() => setIsMenuOpen(false)} className="menu-link">
+            <Link
+              href="/#contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="menu-link"
+            >
               お問い合わせ
             </Link>
           </li>

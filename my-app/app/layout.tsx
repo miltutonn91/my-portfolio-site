@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Hina_Mincho } from "next/font/google";
+import { Geist, Geist_Mono, Hina_Mincho, Aboreto, } from "next/font/google";
 import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -20,6 +20,12 @@ const hinaMincho = Hina_Mincho({
   variable: "--font-hina-mincho",
 });
 
+const aboreto = Aboreto({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-aboreto",
+});
+
 export const metadata: Metadata = {
   title: "Misa Umeda Portfolio",
   description: "梅田実沙のポートフォリオサイトです。",
@@ -37,6 +43,7 @@ export default function RootLayout({
           ${geistSans.variable}
           ${geistMono.variable}
           ${hinaMincho.variable}
+          ${aboreto.variable}
           antialiased
         `}
       >

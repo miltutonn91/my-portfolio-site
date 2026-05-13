@@ -11,6 +11,8 @@ export type Work = {
   tech?: string[];
   year?: number;
 
+  categories?: ("Coding" | "Design" | "Direction")[];
+
   detail?: string;
   point?: string;
   role?: string;
@@ -40,6 +42,8 @@ const works: Work[] = [
     subtitle: "#クライアントワーク",
 
     description: "direction / design / coding",
+
+    categories: ["Direction", "Design", "Coding"],
 
     siteType: "ブランディングサイト",
 
@@ -99,6 +103,8 @@ const works: Work[] = [
 
   description: "direction / design / coding",
 
+  categories: ["Direction", "Design", "Coding"],
+
   detail:
     "同時制作したブランディングサイトとの一貫性を意識しつつ、購入導線を重視した設計を意識しました。数年以内のEC展開を見据えており、実務に近い構成で実装をしました。",
 
@@ -145,6 +151,8 @@ const works: Work[] = [
 
   description: "design / coding",
 
+  categories: ["Design", "Coding"],
+
   detail:
     "直感的に新鮮さ・安心感が伝わるようなファーストビューのデザインを意識し、品質保証や「届くまでの流れ」を簡潔に整理しました。また、行動喚起しやすいUI設計を重視し、購入意欲を高める導線を設計しました。",
 
@@ -190,6 +198,8 @@ const works: Work[] = [
   subtitle: "#架空サイト",
 
   description: "design / coding",
+
+  categories: ["Coding"],
 
   detail:
     "フリーデザインカンプを使用し、コーディングを実施しました。実務に近いコーディングスキルを磨くことを目的とし、デザインを忠実に再現することに加え、レスポンシブ対応やUI表現の細部にもこだわりを持ち実装をしました。FAQやSwiper、Googleフォーム連携など、ユーザビリティを意識したUIを導入しました。",

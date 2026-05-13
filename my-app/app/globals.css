@@ -8,6 +8,10 @@
   font-family: var(--font-hina-mincho), serif;
 }
 
+.font-aboreto {
+  font-family: var(--font-aboreto), serif;
+}
+
 .soft-gradient {
   position: absolute;
   inset: 0;
@@ -97,7 +101,16 @@
     0.09em 0.06em 0 rgba(199, 163, 163, 0.38),
     0 12px 22px rgba(162, 134, 134, 0.24);
 }
-
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.45) 0.6px, transparent 0.6px);
+  background-size: 8px 8px;
+  mix-blend-mode: soft-light;
+}
 
 @keyframes scrollLine {
   0% {
