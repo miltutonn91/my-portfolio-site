@@ -7,7 +7,7 @@ export type Work = {
   subtitle?: string;
   description: string;
   github?: string;
-  detailLink?: string;
+  detailLink: string;
   tech?: string[];
   year?: number;
 
@@ -37,9 +37,9 @@ const works: Work[] = [
     image: "/images/works/pc1.jpg",
     detailImage: "/images/fv/fv-slide-1.jpg",
 
-    title: "CHIFFONTE　ブランディングサイト",
+    title: "CHIFFONTE  ブランディングサイト",
 
-    subtitle: "クライアントワーク",
+    subtitle: "#クライアントワーク",
 
     description: "direction / design / coding",
 
@@ -99,7 +99,7 @@ const works: Work[] = [
 
   title: "CHIFFONTE ECサイト",
 
-  subtitle: "クライアントワーク",
+  subtitle: "#クライアントワーク",
 
   description: "direction / design / coding",
 
@@ -147,7 +147,7 @@ const works: Work[] = [
 
   title: "宅配野菜 LPサイト",
 
-  subtitle: "架空サイト",
+  subtitle: "#架空サイト",
 
   description: "design / coding",
 
@@ -195,7 +195,7 @@ const works: Work[] = [
 
   title: "蓼科ごとう農園サイト",
 
-  subtitle: "架空サイト",
+  subtitle: "#架空サイト",
 
   description: "coding",
 

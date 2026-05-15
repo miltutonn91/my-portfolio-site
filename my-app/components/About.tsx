@@ -9,9 +9,9 @@ import { about } from '@/data/about';
 export default function About() {
   return (
     <section
-      id="about"
-      className="relative overflow-hidden bg-white px-5 py-20 text-[#6A5C5C] md:px-10 md:py-28"
-    >
+  id="top"
+  className="relative z-[1] mx-auto max-w-6xl px-5 py-[72px] md:px-10 md:py-[88px]"
+>
       {/* 背景グラデーション */}
       <div className="soft-gradient soft-gradient--right absolute inset-0" />
 
@@ -64,7 +64,7 @@ export default function About() {
               <Button
                 asChild
                 variant="gray"
-                className="cursor-pointer bg-transparent font-normal text-[#6A5C5C] hover:bg-[#F5F5F5]"
+                className="cursor-pointer bg-transparent font-normal hover:bg-[#F5F5F5]"
               >
                 <Link href="/about" className="inline-flex cursor-pointer items-center gap-2">
                   <span>詳しく見る</span>

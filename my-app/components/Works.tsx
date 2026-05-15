@@ -7,24 +7,34 @@ export default function Works() {
       id="works"
       className="
         relative overflow-hidden
-        bg-[#F5F3EE] px-5 py-[72px] text-[#3F3A37]
+        bg-[#FBFAF7] px-5 py-[72px] 
         md:px-10 md:py-[88px]
       "
     >
-      <div className="mx-auto max-w-[1120px]">
-  <div className="mb-10 md:mb-12">
-    <p className="item-heading mb-3">
-      制作物
-    </p>
+      {/* FVとつながる淡いぼかし */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        {/* 右上：淡いブルー */}
+        <div className="absolute right-[-10%] top-[-16%] h-[480px] w-[480px] rounded-full bg-[#D5EAEC]/48 blur-[115px]" />
 
-    <div className="flex items-end gap-5">
-      <h2 className="section-heading">
-        Works
-      </h2>
+        {/* 左下：淡いオレンジベージュ */}
+        <div className="absolute bottom-[-20%] left-[-10%] h-[580px] w-[580px] rounded-full bg-[#F1D4B8]/42 blur-[130px]" />
 
-      <span className="mb-3 h-px flex-1 bg-[#DCD8D0]" />
-    </div>
-  </div>
+        {/* 中央左：ほんのりピンク */}
+        <div className="absolute left-[22%] top-[28%] h-[380px] w-[380px] rounded-full bg-[#EFD4D8]/34 blur-[110px]" />
+
+        {/* 右下：淡い生成りグリーン */}
+        <div className="absolute bottom-[8%] right-[8%] h-[340px] w-[340px] rounded-full bg-[#E8F2D7]/28 blur-[105px]" />
+
+        {/* 全体をなじませる白 */}
+        <div className="absolute inset-0 bg-white/10" />
+      </div>
+
+      <div className="relative z-[1] mx-auto max-w-[1120px]">
+        <div className="mb-16 text-center md:mb-20">
+          <h2 className="section-heading">
+            Works
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 gap-x-14 gap-y-[72px] md:grid-cols-2 md:gap-y-[80px] lg:gap-x-16 lg:gap-y-[88px]">
           {works.map((work) => (

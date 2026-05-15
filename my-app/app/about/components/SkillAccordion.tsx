@@ -19,17 +19,13 @@ export default function Skill() {
   return (
     <section
       id="skill"
-      className="relative bg-white px-5 py-20 text-[#6A5C5C] md:px-10 md:py-28"
+      className="relative px-5 py-20 md:px-10 md:py-28"
     >
-      <div className="mx-auto w-full max-w-6xl">
+      <div className="mx-auto w-full max-w-[1120px]">
         {/* タイトル */}
-        <div className="mb-12 md:mb-20">
-          <p className="category-heading mb-3">
-            できること
-          </p>
-
-          <h2 className="section-heading">
-            Skill
+        <div className="mb-12 md:mb-16">
+          <h2 className="subsection-heading subsection-heading--after-line">
+            Skills
           </h2>
         </div>
 
@@ -37,7 +33,7 @@ export default function Skill() {
           {/* Web Design */}
           <div className="flex flex-col items-center gap-6 md:gap-9">
             <div className="flex w-full flex-col items-center gap-6 md:flex-row md:items-center md:gap-12">
-              <div className="relative h-[150px] w-[225px] md:h-[190px] md:w-[285px]">
+              <div className="relative h-[150px] w-[225px] overflow-hidden bg-[#FFFDF8] md:h-[190px] md:w-[285px]">
                 <img
                   src="/images/about/skill-1.jpg"
                   alt="Web Design"
@@ -58,14 +54,14 @@ export default function Skill() {
 
             <button
               type="button"
-              className="flex cursor-pointer items-center gap-4 md:gap-6"
+              className="flex cursor-pointer items-center gap-4 text-[#5F5555] transition hover:text-[#A28686] md:gap-6"
               onClick={() => toggle("design")}
             >
-              <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full border border-[rgba(0,0,0,0.3)] text-[24px] text-[#A28686] transition-transform duration-200 md:h-[52px] md:w-[52px] md:text-[28px]">
+              <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full border border-[#DCD8D0] text-[24px] transition md:h-[52px] md:w-[52px] md:text-[28px]">
                 {open.includes("design") ? <FiMinus /> : <FiPlus />}
               </span>
 
-              <span className="body-text-small">
+              <span className="body-text">
                 スキルを詳しくみる
               </span>
             </button>
@@ -80,7 +76,7 @@ export default function Skill() {
           {/* Web Development */}
           <div className="flex flex-col items-center gap-6 md:gap-9">
             <div className="flex w-full flex-col items-center gap-6 md:flex-row md:items-center md:gap-12">
-              <div className="relative h-[150px] w-[225px] md:h-[190px] md:w-[285px]">
+              <div className="relative h-[150px] w-[225px] overflow-hidden bg-[#FFFDF8] md:h-[190px] md:w-[285px]">
                 <img
                   src="/images/about/skill-2.jpg"
                   alt="Web Development"
@@ -101,14 +97,14 @@ export default function Skill() {
 
             <button
               type="button"
-              className="flex cursor-pointer items-center gap-4 md:gap-6"
+              className="flex cursor-pointer items-center gap-4 text-[#5F5555] transition hover:text-[#A28686] md:gap-6"
               onClick={() => toggle("dev")}
             >
-              <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full border border-[rgba(0,0,0,0.3)] text-[24px] text-[#A28686] transition-transform duration-200 md:h-[52px] md:w-[52px] md:text-[28px]">
+              <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full border border-[#DCD8D0] text-[24px] transition md:h-[52px] md:w-[52px] md:text-[28px]">
                 {open.includes("dev") ? <FiMinus /> : <FiPlus />}
               </span>
 
-              <span className="body-text-small">
+              <span className="body-text">
                 スキルを詳しくみる
               </span>
             </button>

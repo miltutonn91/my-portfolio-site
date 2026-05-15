@@ -6,7 +6,10 @@
 /* ------------------------------
   Font
 ------------------------------ */
-
+body {
+  font-family: var(--font-dm-sans), var(--font-noto-sans-jp), system-ui, sans-serif;
+  color: #2f2f2f;
+}
 .font-hina {
   font-family: var(--font-hina-mincho), serif;
 }
@@ -39,13 +42,13 @@
 
 @media screen and (min-width: 768px) {
   .section-heading {
-    font-size: 3.5rem; /* 56px */
+    font-size: 2rem; /* 56px */
   }
 }
 
 /* 中見出し：Skill / Strengths */
 .subsection-heading {
-  font-family: var(--font-marcellus), serif;
+  font-family: var(--font-aboreto), serif;
   font-size: 1.625rem; /* 26px */
   line-height: 1.25;
   letter-spacing: 0.12em;
@@ -59,38 +62,47 @@
   }
 }
 
-/* 小さい日本語ラベル：わたしについて / スキル / わたしの強み など */
+/* アコーディオン内の項目名：Illustrator / Photoshop / Figma / HTML / CSS など */
 .item-heading {
+  display: block;
   font-family: "YakuHanJP", var(--font-noto-sans-jp), system-ui, sans-serif;
-  font-size: 0.75rem; /* 12px */
-  line-height: 1.7;
-  letter-spacing: 0.18em;
-  color: #6f6661;
-  font-weight: 500;
-}
-
-@media screen and (min-width: 768px) {
-  .item-heading {
-    font-size: 0.8125rem; /* 13px */
-  }
-}
-
-/* 項目見出し：Web design / Web development / 粘り強さ / 洞察力 / 探究心 / 作品カードタイトル */
-.strength-heading {
-  font-family: "YakuHanJP", var(--font-noto-sans-jp), system-ui, sans-serif;
-  font-size: 1rem; /* 16px */
+  font-size: 0.875rem; /* 14px */
   line-height: 1.75;
-  letter-spacing: 0.05em;
-  color: #a28686;
+  letter-spacing: 0.06em;
+  color: #6A5C5C;
   font-weight: 600;
 }
 
 @media screen and (min-width: 768px) {
-  .strength-heading {
-    font-size: 1.125rem; /* 18px */
+  .item-heading {
+    font-size: 1.1rem; /* 16px */
   }
 }
 
+/* 項目見出し：Web design / Web development / 粘り強さ / 洞察力 / 探究心 / 作品カードタイトル */
+.category-heading {
+  font-family: "YakuHanJP", var(--font-noto-sans-jp), system-ui, sans-serif;
+  font-size: 1rem; 
+  line-height: 1.75;
+  letter-spacing: 0.05em;
+  color: #6A5C5C;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .category-heading {
+    font-size: 1.5rem; /* 18px */
+  }
+}
+/* 本文：About / Skills / Strengths 共通 */
+.body-text {
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-size: 0.875rem; /* 14px */
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2F2f2f;
+  font-weight: 400;
+}
 /* ------------------------------
   Utility
 ------------------------------ */
@@ -290,4 +302,49 @@
 
 .animate-scrollArrow {
   animation: scrollArrow 1.7s ease-in-out infinite;
+}
+.subsection-heading--line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.subsection-heading--line::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: #a28686;
+  flex-shrink: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .subsection-heading--line::before {
+    width: 64px;
+  }
+}
+.subsection-heading--after-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.subsection-heading--after-line::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(162, 134, 134, 0.45);
+  flex: 1;
+}
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
+
+  a,
+  button,
+  [role="button"] {
+    cursor: none;
+  }
 }

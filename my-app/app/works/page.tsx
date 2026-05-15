@@ -1,6 +1,7 @@
 import Works from "@/components/Works";
 import Footer from "@/components/ui/Footer";
 import HamburgerMenu from "@/components/ui/HamburgerMenu";
+import Contact from '@/components/Contact';
 import ScrollTopButton from "@/components/ui/ScrollTopButton";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
 
@@ -11,6 +12,7 @@ export default function WorksPage() {
       <Works />
       <ScrollTopButton />
       <ScrollIndicator />
+      <Contact />
       <Footer />
     </main>
   );

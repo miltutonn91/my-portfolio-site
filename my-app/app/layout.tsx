@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Hina_Mincho, Aboreto, Marcellus,Noto_Sans_JP} from "next/font/google";
+import { Hina_Mincho, Aboreto, Marcellus,DM_Sans} from "next/font/google";
 import "yakuhanjp/dist/css/yakuhanjp.css";
 import "./globals.css";
+import CustomCursor from "@/components/CustomCursor";
 
 const hinaMincho = Hina_Mincho({
   weight: "400",
@@ -21,7 +22,7 @@ const marcellus = Marcellus({
   variable: "--font-marcellus",
 });
 
-const notoSansJp = Noto_Sans_JP({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-noto-sans-jp",
@@ -45,10 +46,11 @@ export default function RootLayout({
           ${hinaMincho.variable}
           ${aboreto.variable}
           ${marcellus.variable}
-          ${notoSansJp.variable}   
+          ${dmSans.variable}   
           antialiased
         `}
       >
+        <CustomCursor />
         {children}
       </body>
     </html>

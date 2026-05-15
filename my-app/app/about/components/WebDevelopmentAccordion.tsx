@@ -8,7 +8,7 @@ export default function WebDevelopmentAccordion() {
         <div className="grid grid-cols-1 gap-2 md:grid-cols-[220px_1fr] md:gap-0">
           <p className="item-heading">HTML / CSS</p>
 
-          <p className="body-text-small">
+          <p className="body-text">
             デザインカンプを正確に再現し、レスポンシブ対応の実装ができます。
           </p>
         </div>
@@ -21,7 +21,7 @@ export default function WebDevelopmentAccordion() {
         <div className="grid grid-cols-1 gap-2 md:grid-cols-[220px_1fr] md:gap-0">
           <p className="item-heading">JavaScript</p>
 
-          <p className="body-text-small">
+          <p className="body-text">
             動的なUIやアニメーションを実装し、直感的なサイトの動きを作れます。
           </p>
         </div>
@@ -34,7 +34,7 @@ export default function WebDevelopmentAccordion() {
         <div className="grid grid-cols-1 gap-2 md:grid-cols-[220px_1fr] md:gap-0">
           <p className="item-heading">TypeScript</p>
 
-          <p className="body-text-small">
+          <p className="body-text">
             型定義によって安全で読みやすいコードを書けます。
             <br />
             React / Next.js 環境でのProps管理やコンポーネント設計に活かしています。
@@ -49,7 +49,7 @@ export default function WebDevelopmentAccordion() {
         <div className="grid grid-cols-1 gap-2 md:grid-cols-[220px_1fr] md:gap-0">
           <p className="item-heading">React / Next.js</p>
 
-          <p className="body-text-small">
+          <p className="body-text">
             コンポーネント思考でUIを設計し、再利用性の高い実装ができます。
             <br />
             App Router構成やSEOを意識したページ設計を行い、パフォーマンスにも配慮した開発を心がけています。
@@ -64,7 +64,7 @@ export default function WebDevelopmentAccordion() {
         <div className="grid grid-cols-1 gap-2 md:grid-cols-[220px_1fr] md:gap-0">
           <p className="item-heading">Tailwind</p>
 
-          <p className="body-text-small">
+          <p className="body-text">
             デザイン意図を反映したスタイリングができ、柔軟にレスポンシブ対応が可能です。
             <br />
             ユーティリティクラスを活用し、効率的かつ統一感のあるUI実装を行えます。

@@ -4,16 +4,12 @@ export default function Strengths() {
   return (
     <section
       id="strengths"
-      className="relative bg-white px-5 py-20 text-[#6A5C5C] md:px-10 md:py-28"
+      className="relative px-5 py-20 md:px-10 md:py-28"
     >
       <div className="mx-auto w-full max-w-6xl">
         {/* タイトル */}
-        <div className="mb-12 md:mb-20">
-          <p className="category-heading mb-3">
-            わたしの強み
-          </p>
-
-          <h2 className="section-heading">
+        <div className="mb-12 md:mb-16">
+          <h2 className="subsection-heading subsection-heading--after-line">
             Strengths
           </h2>
         </div>
@@ -24,7 +20,7 @@ export default function Strengths() {
             <div className="h-[1px] bg-[rgba(0,0,0,0.1)]" />
 
             <div className="flex flex-col gap-3 md:flex-row md:items-start md:gap-[120px]">
-              <h3 className="w-full text-[1.125rem] font-semibold leading-[1.5] tracking-[0.06em] text-[#A28686] md:w-[110px] md:shrink-0 md:text-[1.5rem]">
+              <h3 className="item-heading w-full md:w-[110px] md:shrink-0">
                 粘り強さ
               </h3>
 
@@ -41,7 +37,7 @@ export default function Strengths() {
             <div className="h-[1px] bg-[rgba(0,0,0,0.1)]" />
 
             <div className="flex flex-col gap-3 md:flex-row md:items-start md:gap-[120px]">
-              <h3 className="w-full text-[1.125rem] font-semibold leading-[1.5] tracking-[0.06em] text-[#A28686] md:w-[110px] md:shrink-0 md:text-[1.5rem]">
+              <h3 className="item-heading w-full md:w-[110px] md:shrink-0">
                 洞察力
               </h3>
 
@@ -59,7 +55,7 @@ export default function Strengths() {
             <div className="h-[1px] bg-[rgba(0,0,0,0.1)]" />
 
             <div className="flex flex-col gap-3 md:flex-row md:items-start md:gap-[120px]">
-              <h3 className="w-full text-[1.125rem] font-semibold leading-[1.5] tracking-[0.06em] text-[#A28686] md:w-[110px] md:shrink-0 md:text-[1.5rem]">
+              <h3 className="item-heading w-full md:w-[110px] md:shrink-0">
                 探究心
               </h3>
 
