@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CircleChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { SectionTitle } from '@/components/ui/section-title';
 import { about } from '@/data/about';
 
 export default function About() {
@@ -19,7 +18,13 @@ export default function About() {
       <div className="relative z-[1] mx-auto w-full max-w-6xl">
         {/* タイトル */}
         <div className="mb-10 md:mb-14 md:ml-[4px]">
-          <SectionTitle title="About" subtitle="わたしについて" />
+          <p className="category-heading mb-3">
+            わたしについて
+          </p>
+
+          <h2 className="section-heading">
+            About
+          </h2>
         </div>
 
         <div className="flex flex-col gap-12 md:flex-row md:items-stretch md:justify-between md:gap-20">
