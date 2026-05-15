@@ -27,7 +27,7 @@
   Heading / Text Rules
 ------------------------------ */
 
-/* 大見出し：Works / About / Contact / Skill / Strengths など */
+/* 大見出し：About / Works / Contact */
 .section-heading {
   font-family: var(--font-aboreto), serif;
   font-size: 2.5rem; /* 40px */
@@ -43,9 +43,9 @@
   }
 }
 
-/* 少し小さめの大見出し：Skill / Strengths / Career など */
+/* 中見出し：Skill / Strengths */
 .subsection-heading {
-  font-family: var(--font-aboreto), serif;
+  font-family: var(--font-marcellus), serif;
   font-size: 1.625rem; /* 26px */
   line-height: 1.25;
   letter-spacing: 0.12em;
@@ -59,9 +59,9 @@
   }
 }
 
-/* 小さいカテゴリ見出し：制作物 / わたしについて / 洞察力 / Web Design など */
-.category-heading {
-  font-family: "YakuHanJP", system-ui, sans-serif;
+/* 小さい日本語ラベル：わたしについて / スキル / わたしの強み など */
+.item-heading {
+  font-family: "YakuHanJP", var(--font-noto-sans-jp), system-ui, sans-serif;
   font-size: 0.75rem; /* 12px */
   line-height: 1.7;
   letter-spacing: 0.18em;
@@ -70,54 +70,24 @@
 }
 
 @media screen and (min-width: 768px) {
-  .category-heading {
+  .item-heading {
     font-size: 0.8125rem; /* 13px */
   }
 }
 
-/* 作品名・カードタイトルなど */
-.item-heading {
-  font-family: "YakuHanJP", system-ui, sans-serif;
+/* 項目見出し：Web design / Web development / 粘り強さ / 洞察力 / 探究心 / 作品カードタイトル */
+.strength-heading {
+  font-family: "YakuHanJP", var(--font-noto-sans-jp), system-ui, sans-serif;
   font-size: 1rem; /* 16px */
   line-height: 1.75;
   letter-spacing: 0.05em;
-  color: #2f2f2f;
-  font-weight: 500;
+  color: #a28686;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 768px) {
-  .item-heading {
-    font-size: 1.0625rem; /* 17px */
-  }
-}
-
-/* 本文 */
-.body-text {
-  font-size: 0.875rem; /* 14px */
-  line-height: 1.9;
-  letter-spacing: 0.04em;
-  color: #6a5c5c;
-}
-
-@media screen and (min-width: 768px) {
-  .body-text {
-    font-size: 1rem; /* 16px */
-    line-height: 1.95;
-  }
-}
-
-/* グローバルナビ・小さめリンク */
-.global-nav-text {
-  font-family: "YakuHanJP", system-ui, sans-serif;
-  font-size: 0.8125rem; /* 13px */
-  line-height: 1.6;
-  letter-spacing: 0.08em;
-  color: #6a5c5c;
-}
-
-@media screen and (min-width: 768px) {
-  .global-nav-text {
-    font-size: 0.875rem; /* 14px */
+  .strength-heading {
+    font-size: 1.125rem; /* 18px */
   }
 }
 

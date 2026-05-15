@@ -12,18 +12,19 @@ export default function Works() {
       "
     >
       <div className="mx-auto max-w-[1120px]">
-        <div className="mb-10 md:mb-12">
-          <p className="mb-3 text-[12px] tracking-[0.22em] text-[#6F6661]">
-            制作物
-          </p>
+  <div className="mb-10 md:mb-12">
+    <p className="item-heading mb-3">
+      制作物
+    </p>
 
-          <div className="flex items-end gap-5">
-            <h1 className="font-montserrat text-[40px] font-light leading-none tracking-[0.14em] text-[#5F5555] md:text-[56px]">
-              Works
-            </h1>
-            <span className="mb-3 h-px flex-1 bg-[#DCD8D0]" />
-          </div>
-        </div>
+    <div className="flex items-end gap-5">
+      <h2 className="section-heading">
+        Works
+      </h2>
+
+      <span className="mb-3 h-px flex-1 bg-[#DCD8D0]" />
+    </div>
+  </div>
 
         <div className="grid grid-cols-1 gap-x-14 gap-y-[72px] md:grid-cols-2 md:gap-y-[80px] lg:gap-x-16 lg:gap-y-[88px]">
           {works.map((work) => (

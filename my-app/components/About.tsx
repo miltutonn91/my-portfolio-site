@@ -18,7 +18,7 @@ export default function About() {
       <div className="relative z-[1] mx-auto w-full max-w-6xl">
         {/* タイトル */}
         <div className="mb-10 md:mb-14 md:ml-[4px]">
-          <p className="category-heading mb-3">
+          <p className="item-heading mb-3">
             わたしについて
           </p>
 
