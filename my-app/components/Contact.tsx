@@ -6,55 +6,80 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden text-center text-[#6A5C5C]"
-      style={{
-        background:
-          'linear-gradient(90deg, #F5EFEF 2.88%, rgba(255,225,208,0.19) 53.85%, rgba(241,248,226,0.42) 99.99%)',
-        borderTopLeftRadius: '70% 30%',
-        borderTopRightRadius: '70% 30%',
-      }}
+      className="
+        relative overflow-hidden
+        border-t border-[#E6DDD8]
+        bg-[#F6F1EE]
+        px-5 py-24 text-center text-[#5F5555]
+        md:px-10 md:py-32
+      "
     >
-      <div className="relative z-[1] py-32 md:py-40 px-5 md:px-10 max-w-[680px] mx-auto">
-        {/* CONTACT タイトル */}
+      {/* 背景グラデーション */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <div
+          className="
+            absolute inset-0
+            bg-[linear-gradient(90deg,#F5EFEF_2.88%,rgba(255,225,208,0.24)_53.85%,rgba(241,248,226,0.42)_99.99%)]
+          "
+        />
+
+        {/* 左上：淡いローズ */}
+        <div className="absolute left-[-12%] top-[-35%] h-[360px] w-[360px] rounded-full bg-[#EACFD3]/42 blur-[90px]" />
+
+        {/* 中央：ピーチベージュ */}
+        <div className="absolute left-[34%] top-[10%] h-[280px] w-[340px] rounded-full bg-[#F0CDBB]/24 blur-[88px]" />
+
+        {/* 右下：淡いグリーンベージュ */}
+        <div className="absolute bottom-[-42%] right-[-10%] h-[420px] w-[420px] rounded-full bg-[#E8F2D7]/42 blur-[100px]" />
+
+        {/* なじませ */}
+        <div className="absolute inset-0 bg-white/12" />
+      </div>
+
+      <div className="relative z-[1] mx-auto max-w-[720px]">
         <h2
-          className="font-[400] text-[48px] md:text-[80px] tracking-[6.4px]"
-          style={{
-            color: '#A28686',
-            fontFamily: '"Marcellus", serif',
-            lineHeight: '1.1',
-          }}
+          className="
+            font-aboreto
+            text-[40px] font-light leading-none tracking-[0.14em]
+            text-[#5F5555]
+            md:text-[64px]
+          "
         >
-          CONTACT
+          Contact
         </h2>
 
-        {/* サブタイトル */}
-        <p className="text-[18px] md:text-[20px] tracking-[0.3px] mt-4 md:mt-6">お問い合わせ</p>
+        <span className="mx-auto mt-5 block h-px w-16 bg-[#C98A92]/75" />
 
-        {/* 本文 */}
-        <div className="max-w-[380px] mx-auto text-center mt-6 md:mt-8 mb-10 md:mb-12">
-          <p className="text-[14px] leading-relaxed tracking-[0.3px] mb-8">
-            ご覧いただきありがとうございます。
-            <br />
-            下記のメールアドレスまでお気軽にご連絡ください。
-          </p>
+        <p className="mx-auto mt-8 max-w-[420px] text-[14px] leading-[2] tracking-[0.06em] text-[#5F5555]/75">
+          ご覧いただきありがとうございます。
+          <br />
+          お問い合わせは、下記のメールアドレスより
+          <br className="hidden md:block" />
+          お気軽にご連絡ください。
+        </p>
 
-          {/* メールボタン */}
+        <div className="mx-auto mt-10 max-w-[380px]">
           <Button
+            asChild
             variant="white"
             className="
-              w-full 
-              cursor-pointer
-              text-[#6A5C5C]
-              bg-white
-              border border-[rgba(0,0,0,0.05)]
-              shadow-[0_4px_10px_rgba(0,0,0,0.08)]
-              hover:bg-[#F5F5F5]
-              hover:shadow-[0_6px_14px_rgba(0,0,0,0.12)]
+              w-full cursor-pointer
+              rounded-full
+              border border-[#C98A92]/35
+              bg-[#FFFDF8]/88
+              px-6 py-6
+              text-[13px] tracking-[0.08em] text-[#4F3A30]
+              shadow-[0_8px_24px_rgba(95,85,85,0.08)]
               transition-all duration-300
+              hover:-translate-y-[1px]
+              hover:border-[#C98A92]/65
+              hover:bg-[#FFF8F5]
+              hover:shadow-[0_12px_30px_rgba(95,85,85,0.12)]
             "
-            onClick={() => (window.location.href = 'mailto:nakanomisa51@gmail.com')}
           >
-            nakanomisa51@gmail.com
+            <a href="mailto:nakanomisa51@gmail.com?subject=ポートフォリオサイトからのお問い合わせ">
+              nakanomisa51@gmail.com
+            </a>
           </Button>
         </div>
       </div>

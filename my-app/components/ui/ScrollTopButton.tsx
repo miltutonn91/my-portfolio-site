@@ -1,28 +1,52 @@
-// components/ScrollTopButton.tsx
+// components/ui/ScrollTopButton.tsx
 
 "use client";
 
+import { useEffect, useState } from "react";
+import { ChevronUp } from "lucide-react";
+
 export default function ScrollTopButton() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <button
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="
-        fixed right-8 bottom-8 z-50
-        w-14 h-14
-        rounded-full
-        border border-[#A28686]/50
-        bg-white/85 backdrop-blur-sm
-        text-[#A28686]
-        shadow-[0_6px_18px_rgba(0,0,0,0.12)]
-        cursor-pointer
-        flex flex-col items-center justify-center
-        hover:bg-[#A28686] hover:text-white
-        transition-all duration-300
-      "
-      style={{ fontFamily: "'Marcellus', serif" }}
-    >
-      <span className="text-[14px] leading-none">↑</span>
-      <span className="text-[10px] tracking-[0.12em] mt-1">TOP</span>
-    </button>
+  type="button"
+  aria-label="ページ上部へ戻る"
+  onClick={scrollToTop}
+  className={`
+    fixed bottom-8 right-8 z-40
+    flex h-11 w-11 cursor-pointer items-center justify-center
+    rounded-full border border-[#CFC6BE]
+    bg-[#FFFDFC]/85 text-[#5F5555]
+    backdrop-blur-sm
+    transition-all duration-500
+    hover:-translate-y-1 hover:border-[#BCAFA5] hover:bg-[#F8F3EC]
+    ${
+      isVisible
+        ? "pointer-events-auto translate-y-0 opacity-100"
+        : "pointer-events-none translate-y-3 opacity-0"
+    }
+  `}
+>
+  <ChevronUp size={18} strokeWidth={1.5} />
+</button>
   );
 }

@@ -39,7 +39,7 @@ const works: Work[] = [
 
     title: "CHIFFONTE　ブランディングサイト",
 
-    subtitle: "#クライアントワーク",
+    subtitle: "クライアントワーク",
 
     description: "direction / design / coding",
 
@@ -99,7 +99,7 @@ const works: Work[] = [
 
   title: "CHIFFONTE ECサイト",
 
-  subtitle: "#クライアントワーク",
+  subtitle: "クライアントワーク",
 
   description: "direction / design / coding",
 
@@ -147,7 +147,7 @@ const works: Work[] = [
 
   title: "宅配野菜 LPサイト",
 
-  subtitle: "#架空サイト",
+  subtitle: "架空サイト",
 
   description: "design / coding",
 
@@ -195,9 +195,9 @@ const works: Work[] = [
 
   title: "蓼科ごとう農園サイト",
 
-  subtitle: "#架空サイト",
+  subtitle: "架空サイト",
 
-  description: "design / coding",
+  description: "coding",
 
   categories: ["Coding"],
 

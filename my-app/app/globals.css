@@ -1,8 +1,11 @@
-@import url("https://fonts.googleapis.com/earlyaccess/harenosora.css");
 @import "tailwindcss";
 @source "../app";
 @source "../components";
 @source "../components/ui";
+
+/* ------------------------------
+  Font
+------------------------------ */
 
 .font-hina {
   font-family: var(--font-hina-mincho), serif;
@@ -11,6 +14,139 @@
 .font-aboreto {
   font-family: var(--font-aboreto), serif;
 }
+
+.font-marcellus {
+  font-family: var(--font-marcellus), serif;
+}
+
+.font-yakuhan {
+  font-family: "YakuHanJP", system-ui, sans-serif;
+}
+
+/* ------------------------------
+  Heading / Text Rules
+------------------------------ */
+
+/* 大見出し：Works / About / Contact / Skill / Strengths など */
+.section-heading {
+  font-family: var(--font-aboreto), serif;
+  font-size: 2.5rem; /* 40px */
+  line-height: 1.1;
+  letter-spacing: 0.14em;
+  color: #5f5555;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 768px) {
+  .section-heading {
+    font-size: 3.5rem; /* 56px */
+  }
+}
+
+/* 少し小さめの大見出し：Skill / Strengths / Career など */
+.subsection-heading {
+  font-family: var(--font-aboreto), serif;
+  font-size: 1.625rem; /* 26px */
+  line-height: 1.25;
+  letter-spacing: 0.12em;
+  color: #5f5555;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 768px) {
+  .subsection-heading {
+    font-size: 2rem; /* 32px */
+  }
+}
+
+/* 小さいカテゴリ見出し：制作物 / わたしについて / 洞察力 / Web Design など */
+.category-heading {
+  font-family: "YakuHanJP", system-ui, sans-serif;
+  font-size: 0.75rem; /* 12px */
+  line-height: 1.7;
+  letter-spacing: 0.18em;
+  color: #6f6661;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .category-heading {
+    font-size: 0.8125rem; /* 13px */
+  }
+}
+
+/* 作品名・カードタイトルなど */
+.item-heading {
+  font-family: "YakuHanJP", system-ui, sans-serif;
+  font-size: 1rem; /* 16px */
+  line-height: 1.75;
+  letter-spacing: 0.05em;
+  color: #2f2f2f;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .item-heading {
+    font-size: 1.0625rem; /* 17px */
+  }
+}
+
+/* 本文 */
+.body-text {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: #6a5c5c;
+}
+
+@media screen and (min-width: 768px) {
+  .body-text {
+    font-size: 1rem; /* 16px */
+    line-height: 1.95;
+  }
+}
+
+/* グローバルナビ・小さめリンク */
+.global-nav-text {
+  font-family: "YakuHanJP", system-ui, sans-serif;
+  font-size: 0.8125rem; /* 13px */
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  color: #6a5c5c;
+}
+
+@media screen and (min-width: 768px) {
+  .global-nav-text {
+    font-size: 0.875rem; /* 14px */
+  }
+}
+
+/* ------------------------------
+  Utility
+------------------------------ */
+
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  white-space: nowrap;
+}
+
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.45) 0.6px,
+    transparent 0.6px
+  );
+  background-size: 8px 8px;
+  mix-blend-mode: soft-light;
+}
+
+/* ------------------------------
+  Soft Gradient
+------------------------------ */
 
 .soft-gradient {
   position: absolute;
@@ -66,11 +202,10 @@
   filter: blur(38px);
 }
 
-.writing-vertical {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  white-space: nowrap;
-}
+/* ------------------------------
+  Menu
+------------------------------ */
+
 .menu-link {
   position: relative;
   display: inline-block;
@@ -84,48 +219,29 @@
   bottom: -4px;
   width: 0%;
   height: 1px;
-  background: #A28686;
+  background: #5f5555;
   transition: width 0.3s ease;
 }
 
 .menu-link:hover {
-  color: #A28686;
+  color: #5f5555;
 }
 
 .menu-link:hover::after {
   width: 100%;
 }
+
+/* ------------------------------
+  Works
+------------------------------ */
+
 .work-number {
   text-shadow:
     0.04em 0.03em 0 rgba(255, 255, 255, 0.9),
-    0.09em 0.06em 0 rgba(199, 163, 163, 0.38),
-    0 12px 22px rgba(162, 134, 134, 0.24);
-}
-.noise-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.055;
-  background-image:
-    radial-gradient(rgba(255, 255, 255, 0.45) 0.6px, transparent 0.6px);
-  background-size: 8px 8px;
-  mix-blend-mode: soft-light;
+    0.09em 0.06em 0 rgba(199, 163, 163, 0.28),
+    0 12px 22px rgba(95, 85, 85, 0.18);
 }
 
-@keyframes scrollLine {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(300%);
-    opacity: 0;
-  }
-}
 @keyframes worksFlowX {
   from {
     transform: translateX(0);
@@ -161,87 +277,47 @@
   }
 }
 
+/* ------------------------------
+  Scroll Indicator
+------------------------------ */
 
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(64px);
+    opacity: 0;
+  }
+}
 
 .animate-scrollLine {
-  animation: scrollLine 1.6s ease-in-out infinite;
+  animation: scrollLine 1.8s ease-in-out infinite;
 }
 
-@media screen and (min-width: 768px) {
-  .section-heading {
-    font-size: 3rem; /* 48px */
+@keyframes scrollArrow {
+  0% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translateY(5px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
   }
 }
 
-/* 2. サブセクション見出し：Skill / Strengths / Career など */
-.subsection-heading {
-  font-size: 1.5rem; /* 24px */
-  line-height: 1.35;
-  letter-spacing: 0.06em;
-  color: #A28686;
-}
-
-@media screen and (min-width: 768px) {
-  .subsection-heading {
-    font-size: 2rem; /* 32px */
-  }
-}
-
-/* 3. カテゴリ見出し：Web design / Web development など */
-.category-heading {
-  font-size: 1.25rem; /* 20px */
-  line-height: 1.4;
-  letter-spacing: 0.04em;
-  color: #A28686;
-  font-weight: 600;
-}
-
-@media screen and (min-width: 768px) {
-  .category-heading {
-    font-size: 1.5rem; /* 24px */
-  }
-}
-
-/* 4. 小項目：Illustrator / Photoshop / HTML / CSS など */
-.item-heading {
-  font-size: 0.9375rem; /* 15px */
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #5F5555;
-  font-weight: 600;
-}
-
-@media screen and (min-width: 768px) {
-  .item-heading {
-    font-size: 1.0625rem; /* 17px */
-  }
-}
-
-/* 5. 本文 */
-.body-text {
-  font-size: 0.875rem; /* 14px */
-  line-height: 1.9;
-  letter-spacing: 0.04em;
-  color: #6A5C5C;
-}
-
-@media screen and (min-width: 768px) {
-  .body-text {
-    font-size: 1rem; /* 16px */
-    line-height: 1.95;
-  }
-}
-
-/* 6. グローバルナビ */
-.global-nav-text {
-  font-size: 0.8125rem; /* 13px */
-  line-height: 1.6;
-  letter-spacing: 0.08em;
-  color: #6A5C5C;
-}
-
-@media screen and (min-width: 768px) {
-  .global-nav-text {
-    font-size: 0.875rem; /* 14px */
-  }
+.animate-scrollArrow {
+  animation: scrollArrow 1.7s ease-in-out infinite;
 }
