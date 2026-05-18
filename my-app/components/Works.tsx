@@ -1,5 +1,6 @@
 import WorkCard from "@/components/ui/WorksCard";
 import works from "@/data/works";
+import FadeIn from "@/components/FadeIn";
 
 export default function Works() {
   return (
@@ -35,20 +36,20 @@ export default function Works() {
             Works
           </h2>
         </div>
-
-        <div className="grid grid-cols-1 gap-x-14 gap-y-[72px] md:grid-cols-2 md:gap-y-[80px] lg:gap-x-16 lg:gap-y-[88px]">
-          {works.map((work) => (
-            <WorkCard
-              key={work.id}
-              image={work.image}
-              title={work.title}
-              description={work.description}
-              detailLink={work.detailLink}
-              siteUrl={work.siteUrl}
-              github={work.github}
-            />
-          ))}
-        </div>
+<div className="grid grid-cols-1 gap-x-14 gap-y-[72px] md:grid-cols-2 md:gap-y-[80px] lg:gap-x-16 lg:gap-y-[88px]">
+  {works.map((work, index) => (
+    <FadeIn key={work.id} delay={(index % 2) * 120}>
+      <WorkCard
+        image={work.image}
+        title={work.title}
+        description={work.description}
+        detailLink={work.detailLink}
+        siteUrl={work.siteUrl}
+        github={work.github}
+      />
+    </FadeIn>
+  ))}
+</div>
       </div>
     </section>
   );

@@ -50,7 +50,7 @@ export default function WorkCard({
 
       <div className="relative mt-5">
         <div className="mb-3">
-          <span className="text-[13px] font-medium tracking-[0.1em] text-[#9ABCB7]">
+          <span className="text-[14px] font-medium tracking-[0.1em] text-[#9ABCB7]">
             {description}
           </span>
         </div>

@@ -50,7 +50,7 @@ export default function Contact() {
 
         <span className="mx-auto mt-5 block h-px w-16 bg-[#C98A92]/75" />
 
-        <p className="mx-auto mt-8 max-w-[420px] text-[14px] leading-[2] tracking-[0.06em] text-[#5F5555]/75">
+        <p className="mx-auto mt-8 max-w-[420px] text-[14px] leading-[2] tracking-[0.06em]">
           ご覧いただきありがとうございます。
           <br />
           お問い合わせは、下記のメールアドレスより
@@ -77,7 +77,7 @@ export default function Contact() {
               hover:shadow-[0_12px_30px_rgba(95,85,85,0.12)]
             "
           >
-            <a href="mailto:nakanomisa51@gmail.com?subject=ポートフォリオサイトからのお問い合わせ">
+            <a href="mailto:nakanomisa51@gmail.com">
               nakanomisa51@gmail.com
             </a>
           </Button>

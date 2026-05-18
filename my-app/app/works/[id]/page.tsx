@@ -3,6 +3,7 @@ import WorkDetail from '@/components/WorksDetail';
 import { notFound } from 'next/navigation';
 import HamburgerMenu from '@/components/ui/HamburgerMenu';
 
+
 export default async function WorkDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
 

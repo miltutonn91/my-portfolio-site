@@ -8,7 +8,7 @@ import ScrollIndicator from "@/components/ui/ScrollIndicator";
 export default function WorksPage() {
   return (
     <main className="min-h-screen bg-[#F5F3EE] text-[#5F5555]">
-      <HamburgerMenu isWorksDetailPage />
+      <HamburgerMenu isWorksPage />
       <Works />
       <ScrollTopButton />
       <ScrollIndicator />

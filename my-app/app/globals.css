@@ -75,7 +75,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .item-heading {
-    font-size: 1.1rem; /* 16px */
+    font-size: 1rem; 
   }
 }
 
@@ -102,6 +102,57 @@ body {
   letter-spacing: 0.04em;
   color: #2F2f2f;
   font-weight: 400;
+}
+.fv-title-trace {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+}
+
+.fv-title-trace--first {
+  animation: fvTitleTrace 1500ms cubic-bezier(0.22, 1, 0.36, 1)
+    800ms forwards;
+}
+
+.fv-title-trace--second {
+  animation: fvTitleTrace 1500ms cubic-bezier(0.22, 1, 0.36, 1)
+    1400ms forwards;
+}
+
+.fv-title-sub {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: fvTitleSub 900ms cubic-bezier(0.22, 1, 0.36, 1)
+    2500ms forwards;
+}
+
+@keyframes fvTitleTrace {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    filter: blur(4px);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes fvTitleSub {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 /* ------------------------------
   Utility

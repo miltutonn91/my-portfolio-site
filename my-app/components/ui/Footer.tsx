@@ -1,73 +1,47 @@
-// components/Footer.tsx
+// components/ui/Footer.tsx
 
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
-  const handleTopClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
+  const pathname = usePathname();
 
-    if (window.location.pathname === "/") {
-      const topElement = document.getElementById("top");
-
-      if (topElement) {
-        topElement.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      } else {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      }
-
-      return;
+  const handlePageLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (pathname === href) {
+      e.preventDefault();
+      window.location.href = href;
     }
-
-    window.location.href = "/#top";
-  };
-
-  const handleWorksClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-
-    if (window.location.pathname === "/") {
-      const worksElement = document.getElementById("works");
-
-      if (worksElement) {
-        worksElement.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-
-      return;
-    }
-
-    window.location.href = "/#works";
   };
 
   return (
     <footer className="px-5 py-12 text-center">
       <nav className="mb-6 flex justify-center gap-8">
         <Link
-          href="/#top"
-          onClick={handleTopClick}
+          href="/"
+          onClick={(e) => handlePageLinkClick(e, "/")}
           className="global-nav-text hover:opacity-60"
         >
           Top
         </Link>
 
         <Link
-          href="/#works"
-          onClick={handleWorksClick}
+          href="/works"
+          onClick={(e) => handlePageLinkClick(e, "/works")}
           className="global-nav-text hover:opacity-60"
         >
           Works
         </Link>
 
-        <Link href="/about#top" className="global-nav-text hover:opacity-60">
+        <Link
+          href="/about"
+          onClick={(e) => handlePageLinkClick(e, "/about")}
+          className="global-nav-text hover:opacity-60"
+        >
           About
         </Link>
       </nav>

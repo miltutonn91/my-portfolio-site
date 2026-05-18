@@ -1,21 +1,23 @@
 "use client";
+import FadeIn from "@/components/FadeIn";
 
-import { useState } from "react";
-import WebDesignAccordion from "./WebDesignAccordion";
-import WebDevelopmentAccordion from "./WebDevelopmentAccordion";
-import { FiPlus, FiMinus } from "react-icons/fi";
+const developmentSkills = [
+  { name: "HTML", status: "basic" },
+  { name: "CSS", status: "basic" },
+  { name: "JavaScript", status: "basic" },
+  { name: "TypeScript", status: "learning" },
+  { name: "React", status: "learning" },
+  { name: "Next.js", status: "learning" },
+  { name: "Tailwind CSS", status: "learning" },
+];
+
+const designSkills = [
+  { name: "Figma", status: "basic" },
+  { name: "Photoshop", status: "basic" },
+  { name: "Illustrator", status: "basic" },
+];
 
 export default function Skill() {
-  const [open, setOpen] = useState<string[]>([]);
-
-  const toggle = (key: string) => {
-    setOpen((prev) =>
-      prev.includes(key)
-        ? prev.filter((item) => item !== key)
-        : [...prev, key]
-    );
-  };
-
   return (
     <section
       id="skill"
@@ -28,94 +30,93 @@ export default function Skill() {
             Skills
           </h2>
         </div>
+<FadeIn>
+        <div className="grid gap-8 md:grid-cols-2 md:gap-10">
+          {/* Web Development */}
+          <div
+            className="
+              border border-[#DCD8D0]/80 bg-[#FFFDFC]/55
+              px-6 py-8
+              shadow-[0_18px_45px_rgba(95,85,85,0.06)]
+              md:px-8 md:py-10
+            "
+          >
 
-        <div className="mx-auto flex max-w-[720px] flex-col gap-14 md:gap-24">
-          {/* Web Design */}
-          <div className="flex flex-col items-center gap-6 md:gap-9">
-            <div className="flex w-full flex-col items-center gap-6 md:flex-row md:items-center md:gap-12">
-              <div className="relative h-[150px] w-[225px] overflow-hidden bg-[#FFFDF8] md:h-[190px] md:w-[285px]">
-                <img
-                  src="/images/about/skill-1.jpg"
-                  alt="Web Design"
-                  className="h-full w-full object-cover"
-                />
-              </div>
+            <h3 className="category-heading mb-1">
+              Web development
+            </h3>
+              <p className="mb-7 text-[12px] font-bold tracking-[0.14em] text-[#9ABCB7]">
+              開発
+            </p>
 
-              <div className="w-full max-w-[380px] text-left">
-                <h3 className="category-heading mb-4 md:mb-6">
-                  Web design
-                </h3>
+            <p className="body-text mb-7">
+              デザインカンプをもとに、再現性・レスポンシブ対応・保守性を意識して実装しています。現在はReactやNext.jsなど、より実務に近いフロントエンド開発についても学習を進めています。
+            </p>
 
-                <p className="body-text">
-                  Webサイト、バナーの制作をすることができます。ユーザーが操作に迷うことのないシンプルでわかりやすいデザインを心がけながら、些細なところまで丁寧に作り込むようにしています。
-                </p>
-              </div>
+            <div className="flex flex-wrap gap-2.5">
+              {developmentSkills.map((skill) => (
+                <span
+                  key={skill.name}
+                  className="
+                    inline-flex items-center gap-2 rounded-full
+                    border border-[#D8D1CC]/80 bg-[#FFFDFC]/80
+                    px-3.5 py-1.5
+                    text-[12px] tracking-[0.08em] text-[#5F5555]
+                    shadow-[0_8px_20px_rgba(95,85,85,0.04)]
+                  "
+                >
+                  {skill.name}
+
+                  {skill.status === "learning" && (
+                    <span className="rounded-full bg-[#9ABCB7]/12 px-2 py-[2px] text-[10px] font-medium tracking-[0.08em] text-[#6F9993]">
+                      learning
+                    </span>
+                                      )}
+                </span>
+              ))}
             </div>
-
-            <button
-              type="button"
-              className="flex cursor-pointer items-center gap-4 text-[#5F5555] transition hover:text-[#A28686] md:gap-6"
-              onClick={() => toggle("design")}
-            >
-              <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full border border-[#DCD8D0] text-[24px] transition md:h-[52px] md:w-[52px] md:text-[28px]">
-                {open.includes("design") ? <FiMinus /> : <FiPlus />}
-              </span>
-
-              <span className="body-text">
-                スキルを詳しくみる
-              </span>
-            </button>
-
-            {open.includes("design") && (
-              <div className="mt-1 w-full md:mt-3">
-                <WebDesignAccordion />
-              </div>
-            )}
           </div>
 
-          {/* Web Development */}
-          <div className="flex flex-col items-center gap-6 md:gap-9">
-            <div className="flex w-full flex-col items-center gap-6 md:flex-row md:items-center md:gap-12">
-              <div className="relative h-[150px] w-[225px] overflow-hidden bg-[#FFFDF8] md:h-[190px] md:w-[285px]">
-                <img
-                  src="/images/about/skill-2.jpg"
-                  alt="Web Development"
-                  className="h-full w-full object-cover"
-                />
-              </div>
+          {/* Web Design */}
+          <div
+            className="
+              border border-[#DCD8D0]/80 bg-[#FFFDFC]/55
+              px-6 py-8
+              shadow-[0_18px_45px_rgba(95,85,85,0.06)]
+              md:px-8 md:py-10
+            "
+          >
 
-              <div className="w-full max-w-[380px] text-left">
-                <h3 className="category-heading mb-4 md:mb-6">
-                  Web development
-                </h3>
+            <h3 className="category-heading mb-1">
+              Web design
+            </h3>
+            <p className="mb-7 text-[12px] font-bold tracking-[0.14em] text-[#9ABCB7]">
+              デザイン
+            </p>
 
-                <p className="body-text">
-                  デザインカンプを忠実に再現することができます。規則性のある命名をし、誰が見てもわかりやすいコードを書くことを心がけています。
-                </p>
-              </div>
+            <p className="body-text mb-7">
+              Webサイトやバナーの制作ができます。ユーザーが操作に迷わないシンプルでわかりやすい設計を意識しながら、余白や配色、細部の見え方まで丁寧に整えることを大切にしています。
+            </p>
+
+            <div className="flex flex-wrap gap-2.5">
+              {designSkills.map((skill) => (
+                <span
+                  key={skill.name}
+                  className="
+                    inline-flex items-center rounded-full
+                    border border-[#D8D1CC]/80 bg-[#FFFDFC]/80
+                    px-3.5 py-1.5
+                    text-[12px] tracking-[0.08em] text-[#5F5555]
+                    shadow-[0_8px_20px_rgba(95,85,85,0.04)]
+                  "
+                >
+                  {skill.name}
+                </span>
+              ))}
             </div>
-
-            <button
-              type="button"
-              className="flex cursor-pointer items-center gap-4 text-[#5F5555] transition hover:text-[#A28686] md:gap-6"
-              onClick={() => toggle("dev")}
-            >
-              <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full border border-[#DCD8D0] text-[24px] transition md:h-[52px] md:w-[52px] md:text-[28px]">
-                {open.includes("dev") ? <FiMinus /> : <FiPlus />}
-              </span>
-
-              <span className="body-text">
-                スキルを詳しくみる
-              </span>
-            </button>
-
-            {open.includes("dev") && (
-              <div className="mt-1 w-full md:mt-3">
-                <WebDevelopmentAccordion />
-              </div>
-            )}
           </div>
         </div>
+        </FadeIn>
       </div>
     </section>
   );

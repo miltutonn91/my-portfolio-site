@@ -4,18 +4,22 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
 
 type HamburgerMenuProps = {
   isAboutPage?: boolean;
+  isWorksPage?: boolean;
   isWorksDetailPage?: boolean;
   position?: "fixed" | "absolute";
 };
 
 export default function HamburgerMenu({
   isAboutPage = false,
+  isWorksPage = false,
   isWorksDetailPage = false,
   position = "fixed",
 }: HamburgerMenuProps) {
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const positionClass =
@@ -23,16 +27,33 @@ export default function HamburgerMenu({
       ? "absolute right-8 top-8"
       : "fixed right-5 top-5 md:right-6 md:top-6";
 
+    const isWorksArea = isWorksPage || isWorksDetailPage;
+const contactHref = isWorksDetailPage ? "/works#contact" : "#contact";
+
+const menuLinkClass = `
+  group inline-flex w-fit items-center gap-3
+  text-[18px] leading-none tracking-[0.14em] text-[#4F4646]
+  transition duration-300
+  hover:text-[#9ABCB7]
+`;
+
+const menuDotClass = `
+  h-1.5 w-1.5 rounded-full bg-[#9ABCB7]
+  opacity-0 transition duration-300
+  group-hover:opacity-100
+`;
+
   return (
     <>
+      {/* ハンバーガーボタン */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label="メニューを開く"
         className={`
-        ${positionClass}
-        z-[999]
-        flex h-10 w-10 cursor-pointer items-center justify-center
-      `}
+          ${positionClass}
+          z-[999]
+          flex h-10 w-10 cursor-pointer items-center justify-center
+        `}
       >
         <span
           className={`absolute block h-[1.1px] w-6 bg-[#5F5555] transition-all duration-300 ${
@@ -51,14 +72,14 @@ export default function HamburgerMenu({
         />
       </button>
 
+      {/* 背景オーバーレイ */}
       <div
         onClick={() => setIsMenuOpen(false)}
         className={`
           fixed inset-0 z-[80]
-          bg-[#F8F6F2]/90
-          backdrop-blur-sm
+          bg-[#FBF7F2]/45
+          backdrop-blur-[2px]
           transition-opacity duration-500
-          md:bg-[rgba(255,225,208,0.6)]
           ${
             isMenuOpen
               ? "pointer-events-auto opacity-100"
@@ -67,80 +88,135 @@ export default function HamburgerMenu({
         `}
       />
 
-      <div
-        className={`
-          fixed right-0 top-0 z-[90] hidden h-full w-1/2
-          bg-[#F8F6F2]/80
-          transition-transform duration-500 ease-out
-          md:block
-          ${
-            isMenuOpen
-              ? "pointer-events-auto translate-x-0"
-              : "pointer-events-none translate-x-full"
-          }
-        `}
-      />
+{/* メニュー本体 */}
+<nav
+  className={`
+    fixed right-0 top-0 z-[95]
+    h-screen w-full
+    border-l-0 border-[#D8D1CC]/70
+    bg-[#FFFDFC]/95
+    px-8 pt-28
+    shadow-[-18px_0_45px_rgba(95,85,85,0.08)]
+    backdrop-blur-md
+    transition-all duration-500 ease-out
 
-      <nav
+    md:w-[370px]
+    md:border-l
+    md:px-10
+
+    ${
+      isMenuOpen
+        ? "pointer-events-auto translate-x-0 opacity-100"
+        : "pointer-events-none translate-x-full opacity-0"
+    }
+  `}
+>
+  {/* うっすら背景のにじみ */}
+<div className="pointer-events-none absolute inset-0 overflow-hidden">
+  <div className="absolute right-[-30%] top-[6%] h-[300px] w-[300px] rounded-full bg-[#9ABCB7]/24 blur-[80px]" />
+  <div className="absolute bottom-[10%] left-[-30%] h-[340px] w-[340px] rounded-full bg-[#F1D4B8]/26 blur-[90px]" />
+  <div className="absolute inset-0 bg-white/8" />
+</div>
+
+  <div className="relative z-[1]">
+
+    <ul className="flex flex-col gap-8">
+      {(isAboutPage || isWorksArea) && (
+        <li
+          className={`
+            transition-all duration-500 ease-out
+            ${
+              isMenuOpen
+                ? "translate-x-0 opacity-100 delay-200"
+                : "translate-x-4 opacity-0"
+            }
+          `}
+        >
+          <Link href="/" onClick={() => setIsMenuOpen(false)} className={menuLinkClass}>
+  <span className={menuDotClass} />
+  <span className="flex flex-col gap-1">
+    <span className="text-[20px] tracking-[0.14em] mb-1">Top</span>
+    <span className="text-[11px] tracking-[0.12em] text-[#9A8D8D]">
+      ホーム
+    </span>
+  </span>
+</Link>
+        </li>
+      )}
+
+      {!isWorksArea && (
+        <li
+          className={`
+            transition-all duration-500 ease-out
+            ${
+              isMenuOpen
+                ? "translate-x-0 opacity-100 delay-[260ms]"
+                : "translate-x-4 opacity-0"
+            }
+          `}
+        >
+         <Link
+  href="/works"
+  onClick={() => setIsMenuOpen(false)}
+  className={menuLinkClass}
+>
+  <span className={menuDotClass} />
+  <span className="flex flex-col gap-1">
+    <span className="text-[20px] tracking-[0.14em] mb-1">Works</span>
+    <span className="text-[11px] tracking-[0.12em] text-[#A28686]">
+      制作したもの
+    </span>
+  </span>
+</Link>
+        </li>
+      )}
+
+      {(!isAboutPage || isWorksArea) && (
+        <li
+          className={`
+            transition-all duration-500 ease-out
+            ${
+              isMenuOpen
+                ? "translate-x-0 opacity-100 delay-[320ms]"
+                : "translate-x-4 opacity-0"
+            }
+          `}
+        >
+          <Link href="/about" onClick={() => setIsMenuOpen(false)} className={menuLinkClass}>
+  <span className={menuDotClass} />
+  <span className="flex flex-col gap-1">
+    <span className="text-[20px] tracking-[0.14em] mb-1">About</span>
+    <span className="text-[11px] tracking-[0.12em] text-[#A28686]">
+      わたしのこと
+    </span>
+  </span>
+</Link>
+        </li>
+      )}
+
+      <li
         className={`
-          fixed right-10 top-32 z-[95]
           transition-all duration-500 ease-out
-          md:right-20
           ${
             isMenuOpen
-              ? "pointer-events-auto translate-y-0 opacity-100"
-              : "pointer-events-none -translate-y-2 opacity-0"
+              ? "translate-x-0 opacity-100 delay-[380ms]"
+              : "translate-x-4 opacity-0"
           }
         `}
       >
-        <ul className="flex flex-col gap-10 text-[1.25rem] tracking-[0.08em] text-[#5A5A5A] md:gap-12 md:text-[1.375rem]">
-          {(isAboutPage || isWorksDetailPage) && (
-            <li>
-              <Link
-                href="/#top"
-                onClick={() => setIsMenuOpen(false)}
-                className="menu-link"
-              >
-                トップ
-              </Link>
-            </li>
-          )}
-
-          {!isWorksDetailPage && (
-            <li>
-              <Link
-                href="/#works"
-                onClick={() => setIsMenuOpen(false)}
-                className="menu-link"
-              >
-                制作物
-              </Link>
-            </li>
-          )}
-
-          {(!isAboutPage || isWorksDetailPage) && (
-            <li>
-              <Link
-                href="/about#top"
-                onClick={() => setIsMenuOpen(false)}
-                className="menu-link"
-              >
-                わたしのこと
-              </Link>
-            </li>
-          )}
-
-          <li>
-            <Link
-              href="/#contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="menu-link"
-            >
-              お問い合わせ
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        <Link href="#contact" onClick={() => setIsMenuOpen(false)} className={menuLinkClass}>
+  <span className={menuDotClass} />
+  <span className="flex flex-col gap-1">
+    <span className="text-[19px] tracking-[0.16em]">Contact</span>
+    <span className="text-[11px] tracking-[0.12em] text-[#A28686]">
+      お問い合わせ
+    </span>
+  </span>
+</Link>
+      </li>
+    </ul>
+  </div>
+</nav>
     </>
   );
 }
