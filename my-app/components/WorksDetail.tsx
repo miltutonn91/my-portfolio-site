@@ -164,22 +164,22 @@ export default function WorksDetail({ work }: { work: Work }) {
                         <dt className="works-heading mb-4">使用ツール</dt>
 
                         <dd>
-                          <ul className="flex flex-wrap gap-x-5 gap-y-3">
-                            {work.tech.map((tech) => {
-                              const Icon = techIcons[tech];
+                          <ul className="grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3 md:grid-cols-2">
+    {work.tech.map((tech) => {
+      const Icon = techIcons[tech];
 
-                              return (
-                                <li
-                                  key={tech}
-                                  className="body-text flex items-center gap-2 leading-[1.8] tracking-[0.04em] text-[#6A5C5C]"
-                                >
-                                  {Icon && <Icon className="text-[1rem] text-[#B99A9E]" />}
+      return (
+        <li
+          key={tech}
+          className="flex items-center gap-2 text-[13px] leading-[1.8] tracking-[0.04em] text-[#6A5C5C] md:text-[15px]"
+        >
+          {Icon && <Icon className="text-[14px] text-[#B99A9E] md:text-[16px]" />}
 
-                                  <span>{tech}</span>
-                                </li>
-                              );
-                            })}
-                          </ul>
+          <span>{tech}</span>
+        </li>
+      );
+    })}
+  </ul>
                         </dd>
                       </div>
                     )}

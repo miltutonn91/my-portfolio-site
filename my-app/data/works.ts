@@ -169,9 +169,9 @@ const works: Work[] = [
     },
   ],
 
-  github: "https://github.com/miltutonn91/farm-branding-site",
+  github: "https://github.com/miltutonn91/my-portfolio-site",
 
-  siteUrl: "https://miltutonn91.github.io/farm-branding-site/",
+  siteUrl: "https://my-portfolio-site-sage-tau.vercel.app/",
 
   detailLink: "/works/3",
 },

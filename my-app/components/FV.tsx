@@ -66,14 +66,16 @@ export default function FV() {
                 <div className="noise-overlay absolute inset-0 z-10" />
               </div>
 
-              {/* 中央の縦長写真 */}
+ {/* 中央の縦長写真 */}
 <div
   className="
-    absolute bottom-0 left-1/2 top-[14%] z-10
+    absolute bottom-0 left-1/2 top-[22%] z-10
     w-[clamp(280px,60vw,390px)]
     -translate-x-1/2
     overflow-hidden
     shadow-[0_14px_42px_rgba(90,80,70,0.07)]
+    md:top-[18%]
+    lg:top-[17%]
     2xl:top-[11%]
   "
 >
