@@ -28,25 +28,29 @@ export default function ScrollTopButton() {
 
   return (
     <button
-  type="button"
-  aria-label="ページ上部へ戻る"
-  onClick={scrollToTop}
-  className={`
-    fixed bottom-24 right-4 z-40 md:bottom-8 md:right-8 
-    flex h-11 w-11 cursor-pointer items-center justify-center
-    rounded-full border border-[#CFC6BE]
-    bg-[#FFFDFC]/85 text-[#5F5555]
-    backdrop-blur-sm
-    transition-all duration-500
-    hover:-translate-y-1 hover:border-[#BCAFA5] hover:bg-[#F8F3EC]
-    ${
-      isVisible
-        ? "pointer-events-auto translate-y-0 opacity-100"
-        : "pointer-events-none translate-y-3 opacity-0"
-    }
-  `}
->
-  <ChevronUp size={18} strokeWidth={1.5} />
-</button>
+      type="button"
+      aria-label="ページ上部へ戻る"
+      onClick={scrollToTop}
+      className={`
+        fixed bottom-24 right-4 z-40
+        flex h-11 w-11 items-center justify-center
+        rounded-full border border-[#9ABCB7]/80
+        bg-[#FFFCF8]
+        text-[#5F5555]
+        shadow-[0_10px_26px_rgba(95,85,85,0.16)]
+        transition-all duration-300
+        hover:-translate-y-[2px]
+        hover:bg-[#E8F5F3]
+        hover:shadow-[0_14px_32px_rgba(95,85,85,0.20)]
+        md:bottom-8 md:right-8
+        ${
+          isVisible
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-2 opacity-0"
+        }
+      `}
+    >
+      <ChevronUp size={18} strokeWidth={1.5} />
+    </button>
   );
 }
