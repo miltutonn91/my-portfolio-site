@@ -36,7 +36,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Misa Umeda Portfolio",
-  description: "梅田実沙のポートフォリオサイトです。",
+  description: "フロントエンドエンジニアを目指す梅田実沙のポートフォリオサイトです。制作実績やスキル、プロフィールを掲載しています。",
 };
 
 

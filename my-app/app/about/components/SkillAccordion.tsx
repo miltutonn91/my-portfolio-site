@@ -77,12 +77,13 @@ export default function Skill() {
                     <span
                       key={skill.name}
                       className="
-                        inline-flex min-h-[34px] items-center justify-center gap-1.5
+                        inline-flex min-h-[34px] min-w-0 flex-wrap items-center justify-center
+                        gap-x-1.5 gap-y-1
                         rounded-full border border-[#D8D1CC]/80 bg-[#FFFDFC]/80
-                        px-3 py-1.5
+                        px-2.5 py-1.5
                         text-[12px] tracking-[0.08em] text-[#5F5555]
                         shadow-[0_8px_20px_rgba(95,85,85,0.04)]
-                        md:justify-start md:gap-2 md:px-3.5
+                        md:flex-nowrap md:justify-start md:gap-2 md:px-3.5
                       "
                     >
                       <Icon className="shrink-0 text-[13px] text-[#B99A9E] md:text-[14px]" />
@@ -92,7 +93,7 @@ export default function Skill() {
                       {skill.status === "learning" && (
                         <span
                           className="
-                            rounded-full bg-[#9ABCB7]/12
+                            shrink-0 rounded-full bg-[#9ABCB7]/12
                             px-1.5 py-[2px]
                             text-[9px] font-medium tracking-[0.06em] text-[#6F9993]
                             md:px-2 md:text-[10px]
@@ -134,9 +135,10 @@ export default function Skill() {
                     <span
                       key={skill.name}
                       className="
-                        inline-flex min-h-[34px] items-center justify-center gap-1.5
+                        inline-flex min-h-[34px] min-w-0 items-center justify-center
+                        gap-1.5
                         rounded-full border border-[#D8D1CC]/80 bg-[#FFFDFC]/80
-                        px-3 py-1.5
+                        px-2.5 py-1.5
                         text-[12px] tracking-[0.08em] text-[#5F5555]
                         shadow-[0_8px_20px_rgba(95,85,85,0.04)]
                         md:justify-start md:gap-2 md:px-3.5
