@@ -51,9 +51,9 @@ export default function ScrollIndicator({
   return (
     <div
       className={`
-        fixed right-5 top-1/2 z-30
+        fixed right-1 top-1/2 z-30
         flex w-10 -translate-y-1/2 flex-col items-center gap-3
-        transition-all duration-500 ease-out
+        transition-all duration-500 ease-out md:right-5
         ${
           shouldHide
             ? "pointer-events-none opacity-0"
@@ -62,14 +62,14 @@ export default function ScrollIndicator({
       `}
     >
       <p
-        className="
-          mb-9 rotate-90 whitespace-nowrap
-          text-[10px] tracking-[0.22em] text-[#5F5555]
-        "
-        style={{ fontFamily: "'Montserrat', sans-serif" }}
-      >
-        SCROLL
-      </p>
+  className="
+    mb-9 rotate-90 whitespace-nowrap
+    font-montserrat
+    text-[10px] tracking-[0.22em] text-[#5F5555]
+  "
+>
+  SCROLL
+</p>
 
       <div className="flex flex-col items-center gap-2">
         <div className="relative h-[52px] w-px overflow-hidden bg-[#CFC6BE]">

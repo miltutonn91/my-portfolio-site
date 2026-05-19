@@ -35,15 +35,13 @@ const works: Work[] = [
     id: 1,
 
     image: "/images/works/pc1.jpg",
-    detailImage: "/images/fv/fv-slide-1.jpg",
+    detailImage: "/images/works/pc1.jpg",
 
     title: "CHIFFONTE  ブランディングサイト",
 
     subtitle: "#クライアントワーク",
 
     description: "direction / design / coding",
-
-    categories: ["Direction", "Design", "Coding"],
 
     siteType: "ブランディングサイト",
 
@@ -91,15 +89,13 @@ const works: Work[] = [
   id: 2,
 
   image: "/images/works/pc2.jpg",
-  detailImage: "/images/fv/fv-slide-2.jpg",
+  detailImage: "/images/works/pc2.jpg",
 
   title: "CHIFFONTE ECサイト",
 
   subtitle: "#クライアントワーク",
 
   description: "direction / design / coding",
-
-  categories: ["Direction", "Design", "Coding"],
 
   detail:
     "同時制作したブランディングサイトとの一貫性を意識しながら、商品の魅力が伝わり、購入まで自然につながる導線設計を行いました。クライアント様の今後のEC展開を見据え、実務に近い構成で実装しています。",
@@ -139,15 +135,58 @@ const works: Work[] = [
   id: 3,
 
   image: "/images/works/pc3.jpg",
-  detailImage: "/images/fv/fv-slide-3.jpg",
+  detailImage: "/images/works/pc3.jpg",
+
+  title: "ポートフォリオサイト",
+
+  subtitle: "#自主制作",
+
+  description: "direction / design / coding",
+
+  detail:
+  "転職活動のためのポートフォリオサイトを制作しました。採用担当者の視点を意識し、情報をわかりやすく整理し、作品の魅力や自身の制作姿勢が伝わる導線設計を行いました。Next.jsとTypeScriptを使用し、操作性や保守性も意識して制作しました。",
+
+  tech: [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "Figma",
+  ],
+
+  period: [
+    {
+      label: "WF",
+      duration: "1週間",
+    },
+    {
+      label: "デザイン",
+      duration: "2週間",
+    },
+    {
+      label: "コーディング",
+      duration: "2週間",
+    },
+  ],
+
+  github: "https://github.com/miltutonn91/farm-branding-site",
+
+  siteUrl: "https://miltutonn91.github.io/farm-branding-site/",
+
+  detailLink: "/works/3",
+},
+
+{
+  id: 4,
+
+  image: "/images/works/pc4.jpg",
+  detailImage: "/images/works/pc4.jpg",
 
   title: "宅配野菜 LP（スクール課題）",
 
   subtitle: "#架空サイト",
 
   description: "design / coding",
-
-  categories: ["Design", "Coding"],
 
   detail:
     "直感的に新鮮さや安心感が伝わるよう、ファーストビューから購入導線まで一貫した情報設計を意識して制作しました。また、ユーザーが購入前に知りたい情報を整理し、行動喚起につながるUI設計を行いました。",
@@ -180,14 +219,14 @@ const works: Work[] = [
 
   siteUrl: "https://miltutonn91.github.io/sugutabe/",
 
-  detailLink: "/works/3",
+  detailLink: "/works/4",
 },
 
 {
-  id: 4,
+  id: 5,
 
-  image: "/images/works/pc4.jpg",
-  detailImage: "/images/fv/fv-slide-4.jpg",
+  image: "/images/works/pc5.jpg",
+  detailImage: "/images/works/pc5.jpg",
 
   title: "蓼科ごとう農園 紹介サイト",
 
@@ -220,9 +259,8 @@ const works: Work[] = [
 
   siteUrl: "https://miltutonn91.github.io/farm-branding-site/",
 
-  detailLink: "/works/4",
+  detailLink: "/works/5",
 },
-
  
 ];
 

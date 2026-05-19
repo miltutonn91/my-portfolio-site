@@ -50,11 +50,10 @@ export default function Contact() {
 
         <span className="mx-auto mt-5 block h-px w-16 bg-[#C98A92]/75" />
 
-        <p className="mx-auto mt-8 max-w-[420px] text-[14px] leading-[2] tracking-[0.06em]">
+        <p className="mx-auto mt-8 max-w-[420px] text-[13px] leading-[2] tracking-[0.06em] md:text-[15px]">
           ご覧いただきありがとうございます。
           <br />
-          お問い合わせは、下記のメールアドレスより
-          <br className="hidden md:block" />
+          下記のメールアドレスより
           お気軽にご連絡ください。
         </p>
 
@@ -68,7 +67,7 @@ export default function Contact() {
               border border-[#C98A92]/35
               bg-[#FFFDF8]/88
               px-6 py-6
-              text-[13px] tracking-[0.08em] text-[#4F3A30]
+              text-[13px] tracking-[0.08em] text-[#4F3A30] md:text-[14px]
               shadow-[0_8px_24px_rgba(95,85,85,0.08)]
               transition-all duration-300
               hover:-translate-y-[1px]

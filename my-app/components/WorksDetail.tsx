@@ -1,11 +1,8 @@
 // components/WorksDetail.tsx
 
-import Image from "next/image";
-import Link from "next/link";
-import {
-  ExternalLink,
-  Github,
-} from "lucide-react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { ExternalLink, Github } from 'lucide-react';
 import {
   SiHtml5,
   SiCss3,
@@ -17,11 +14,12 @@ import {
   SiFigma,
   SiAdobephotoshop,
   SiAdobeillustrator,
-} from "react-icons/si";
-import type { IconType } from "react-icons";
-import { Button } from "@/components/ui/button";
-import type { Work } from "@/data/works";
-import BlurIn from "@/components/BlurIn";
+} from 'react-icons/si';
+import type { IconType } from 'react-icons';
+import { Button } from '@/components/ui/button';
+import type { Work } from '@/data/works';
+import works from '@/data/works';
+import BlurIn from '@/components/ui/BlurIn';
 
 const techIcons: Record<string, IconType> = {
   HTML: SiHtml5,
@@ -29,8 +27,8 @@ const techIcons: Record<string, IconType> = {
   JavaScript: SiJavascript,
   TypeScript: SiTypescript,
   React: SiReact,
-  "Next.js": SiNextdotjs,
-  "Tailwind CSS": SiTailwindcss,
+  'Next.js': SiNextdotjs,
+  'Tailwind CSS': SiTailwindcss,
   Tailwind: SiTailwindcss,
   Figma: SiFigma,
   Photoshop: SiAdobephotoshop,
@@ -48,6 +46,12 @@ export default function WorksDetail({ work }: { work: Work }) {
       ? work.period
       : [work.period]
     : [];
+
+  const currentIndex = works.findIndex((item) => item.id === work.id);
+
+  const prevWork = currentIndex > 0 ? works[currentIndex - 1] : works[works.length - 1];
+
+  const nextWork = currentIndex < works.length - 1 ? works[currentIndex + 1] : works[0];
 
   return (
     <main className="relative overflow-hidden bg-[#FBF6F6] text-[#6A5C5C]">
@@ -79,208 +83,166 @@ export default function WorksDetail({ work }: { work: Work }) {
         <div className="mx-auto w-full max-w-[1120px]">
           {/* タイトル */}
           <div className="mb-16 text-center md:mb-20">
-            <h1 className="section-heading">
-              Works
-            </h1>
+            <h1 className="section-heading">Works</h1>
           </div>
 
           <BlurIn>
-            {/* 詳細エリア */}
             <div className="mx-auto max-w-6xl border-t border-[#DCD8D0] pt-10 md:pt-14">
-              <div className="grid grid-cols-1 items-start gap-14 md:grid-cols-[0.9fr_1.1fr] md:items-stretch md:gap-20">
-                {/* 左：情報 */}
-                <div className="order-2 flex h-full flex-col md:order-1">
-                  {/* 作品名 */}
-                  <div className="mb-8">
-                    <p className="mb-1 text-[12px] font-medium leading-[1.6] tracking-[0.1em] text-[#9ABCB7]">
-                      {work.subtitle || "Project"}
-                    </p>
-
-                    <h2 className="category-heading text-[#5F5555]">
-                      {work.title}
-                    </h2>
+              {/* 大きい画像 */}
+              <div className="mx-auto w-full max-w-[980px]">
+                <div className="relative w-full overflow-hidden bg-[#FFFDFC] p-4 shadow-[0_24px_60px_rgba(120,90,75,0.12)] md:p-6">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden">
+                    <Image
+                      src={work.image}
+                      alt={work.title}
+                      fill
+                      priority
+                      className="object-contain"
+                      sizes="(max-width: 768px) 92vw, 980px"
+                    />
                   </div>
+                </div>
+              </div>
 
-                  {/* 説明文 */}
-                  <p className="body-text whitespace-pre-line">
-                    {work.detail || work.description}
+              {/* 説明エリア */}
+              <div className="mx-auto mt-12 max-w-[860px] md:mt-14">
+                {/* 作品名 */}
+                <div className="mb-8">
+                  <p className="mb-1 text-[12px] font-medium leading-[1.6] tracking-[0.1em] text-[#9ABCB7]">
+                    {work.subtitle || 'Project'}
                   </p>
 
-                  {/* 外部リンク：説明文の下に右寄せ */}
-                  <div className="mt-5 flex flex-wrap justify-end gap-3">
-                    {work.siteUrl && (
-                      <Button asChild variant="works" size="sm">
-                        <Link
-                          href={work.siteUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          サイトを見る
-                          <ExternalLink size={16} strokeWidth={1.5} />
-                        </Link>
-                      </Button>
-                    )}
+                  <h2 className="category-heading text-[#5F5555]">{work.title}</h2>
+                </div>
 
-                    {work.github && (
-                      <Button asChild variant="works" size="sm">
-                        <Link
-                          href={work.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          GitHub
-                          <Github size={16} strokeWidth={1.5} />
-                        </Link>
-                      </Button>
-                    )}
-                  </div>
+                {/* 説明文 */}
+                <p className="body-text whitespace-pre-line">{work.detail || work.description}</p>
 
-                  {/* 概要情報：横長カードを縦並び */}
-                  {(periodItems.length > 0 || work.tech) && (
-                    <dl className="mt-8 flex flex-col gap-5 border-t border-[#DCD8D0] pt-7">
-                      {periodItems.length > 0 && (
-                        <div className="border border-[#DCD8D0]/80 bg-white/35 px-5 py-5 md:px-6">
-                          <dt className="item-heading mb-3">
-                            制作期間
-                          </dt>
+                {/* ボタン */}
+                <div className="mt-5 flex flex-wrap justify-end gap-6">
+                  {work.siteUrl && (
+                    <Button asChild variant="works" size="sm">
+                      <Link href={work.siteUrl} target="_blank" rel="noopener noreferrer">
+                        サイトを見る
+                        <ExternalLink size={16} strokeWidth={1.5} />
+                      </Link>
+                    </Button>
+                  )}
 
-                          <dd className="space-y-1">
-                            {periodItems.map((item) => (
-                              <p key={item.label} className="body-text">
-                                {item.label}：
-                                {Array.isArray(item.duration)
-                                  ? item.duration.join(" / ")
-                                  : item.duration}
-                              </p>
-                            ))}
-                          </dd>
-                        </div>
-                      )}
-
-                      {work.tech && (
-                        <div className="border border-[#DCD8D0]/80 bg-white/35 px-5 py-5 md:px-6">
-                          <dt className="item-heading mb-4">
-                            使用ツール
-                          </dt>
-
-                          <dd>
-                            <ul className="flex flex-wrap gap-x-5 gap-y-3">
-                              {work.tech.map((tech) => {
-                                const Icon = techIcons[tech];
-
-                                return (
-                                  <li
-                                    key={tech}
-                                    className="flex items-center gap-2 text-[0.875rem] leading-[1.8] tracking-[0.04em] text-[#6A5C5C]"
-                                  >
-                                    {Icon && (
-                                      <Icon className="text-[1rem] text-[#B99A9E]" />
-                                    )}
-                                    <span>{tech}</span>
-                                  </li>
-                                );
-                              })}
-                            </ul>
-                          </dd>
-                        </div>
-                      )}
-                    </dl>
+                  {work.github && (
+                    <Button asChild variant="works" size="sm">
+                      <Link href={work.github} target="_blank" rel="noopener noreferrer">
+                        GitHub
+                        <Github size={16} strokeWidth={1.5} />
+                      </Link>
+                    </Button>
                   )}
                 </div>
 
-                {/* 右：画像 */}
-                <div className="order-1 flex h-full items-end justify-center md:order-2 md:justify-end">
-                  {work.siteUrl ? (
-                    <Link
-                      href={work.siteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative block w-full max-w-[390px] cursor-pointer p-5 shadow-[0_24px_60px_rgba(120,90,75,0.14)] md:max-w-[500px] md:p-7"
-                    >
-                      <div className="relative aspect-[266/344] w-full overflow-hidden">
-                        <Image
-                          src={work.detailImage || work.image}
-                          alt={work.title}
-                          fill
-                          priority
-                          className="object-contain"
-                          sizes="(max-width: 768px) 92vw, 470px"
-                        />
+                {/* 概要情報 */}
+                {(periodItems.length > 0 || work.tech) && (
+                  <dl className="mt-10 grid gap-6 border-t border-[#DCD8D0] pt-8 md:grid-cols-2">
+                    {periodItems.length > 0 && (
+                      <div className="border border-[#DCD8D0]/80 bg-white/35 px-5 py-5 md:px-6">
+                        <dt className="works-heading mb-3">制作期間</dt>
+
+                        <dd className="space-y-1">
+                          {periodItems.map((item) => (
+                            <p key={item.label} className="body-text">
+                              {item.label}：
+                              {Array.isArray(item.duration)
+                                ? item.duration.join(' / ')
+                                : item.duration}
+                            </p>
+                          ))}
+                        </dd>
                       </div>
-                    </Link>
-                  ) : (
-                    <div className="relative w-full max-w-[390px] p-5 shadow-[0_24px_60px_rgba(120,90,75,0.14)] md:max-w-[500px] md:p-7">
-                      <div className="relative aspect-[266/344] w-full overflow-hidden">
-                        <Image
-                          src={work.detailImage || work.image}
-                          alt={work.title}
-                          fill
-                          priority
-                          className="object-contain"
-                          sizes="(max-width: 768px) 92vw, 470px"
-                        />
+                    )}
+
+                    {work.tech && (
+                      <div className="border border-[#DCD8D0]/80 bg-white/35 px-5 py-5 md:px-6">
+                        <dt className="works-heading mb-4">使用ツール</dt>
+
+                        <dd>
+                          <ul className="flex flex-wrap gap-x-5 gap-y-3">
+                            {work.tech.map((tech) => {
+                              const Icon = techIcons[tech];
+
+                              return (
+                                <li
+                                  key={tech}
+                                  className="body-text flex items-center gap-2 leading-[1.8] tracking-[0.04em] text-[#6A5C5C]"
+                                >
+                                  {Icon && <Icon className="text-[1rem] text-[#B99A9E]" />}
+
+                                  <span>{tech}</span>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </dd>
                       </div>
-                    </div>
-                  )}
-                </div>
+                    )}
+                  </dl>
+                )}
               </div>
 
-              {/* 一覧へ戻る */}
-              <div className="mt-10">
-                <Link
-                  href="/works"
-                  scroll={true}
-                  className="
-                    group/back inline-flex w-fit items-center gap-4
-                    text-[12px] tracking-[0.12em] text-[#5F5555]
-                    transition duration-300
-                    hover:text-[#A28686]
-                  "
-                >
-                  <span
-                    className="
-                      flex h-[76px] w-[76px] items-center justify-center rounded-full
-                      border border-[#D8D1CC] bg-[#FFFDFC]
-                      shadow-[0_12px_30px_rgba(95,85,85,0.08)]
-                      transition duration-500
-                      group-hover/back:-translate-y-[1px]
-                      group-hover/back:border-[#A28686]/50
-                      group-hover/back:bg-[#F8F4F2]
-                      group-hover/back:shadow-[0_18px_42px_rgba(95,85,85,0.12)]
-                    "
-                  >
-                    <span
-                      className="
-                        relative block h-px w-6 bg-[#5F5555]
-                        transition duration-300
-                        group-hover/back:bg-[#A28686]
-                      "
-                    >
-                      <span
-                        className="
-                          absolute left-0 top-1/2 h-px w-3
-                          origin-left -translate-y-1/2 rotate-[-35deg]
-                          bg-[#5F5555]
-                          transition duration-300
-                          group-hover/back:bg-[#A28686]
-                        "
-                      />
-                    </span>
-                  </span>
+           {/* Prev / Next */}
+<div className="mt-16 border-t border-[#DCD8D0] pt-10">
+  <div className="flex items-center justify-between gap-4">
+    {/* PREV */}
+    <Link
+      href={prevWork.detailLink}
+  className="
+  group/prev inline-flex items-center gap-3
+  rounded-full border border-[#9ABCB7]/80
+  bg-[#FFFCF8] px-4 py-3
+  text-[#5F5555]
+  shadow-[0_12px_28px_rgba(95,85,85,0.12)]
+  transition duration-300
+  hover:-translate-y-[1px]
+  hover:border-[#7FA7A1]
+  hover:bg-[#E8F5F3]
+  hover:shadow-[0_16px_36px_rgba(95,85,85,0.16)]
+  md:px-5 md:py-3.5
+"
+    >
+      <span className="relative block h-px w-7 bg-[#6A5C5C] transition duration-300 group-hover/prev:w-9">
+        <span className="absolute left-0 top-1/2 h-px w-2.5 origin-left -translate-y-1/2 rotate-[-35deg] bg-[#6A5C5C]" />
+      </span>
 
-                  <span className="relative transition duration-300 group-hover/back:-translate-x-1">
-                    一覧へもどる
-                    <span
-                      className="
-                        absolute -bottom-1 left-0 h-px w-full
-                        origin-left scale-x-100 bg-[#A28686]/60
-                        transition-transform duration-300
-                        group-hover/back:scale-x-110
-                      "
-                    />
-                  </span>
-                </Link>
-              </div>
+      <span className="font-montserrat text-[13px] leading-none tracking-[0.14em] md:text-[15px]">
+        PREV
+      </span>
+    </Link>
+
+    {/* NEXT */}
+    <Link
+      href={nextWork.detailLink}
+  className="
+  group/next inline-flex items-center gap-3
+  rounded-full border border-[#9ABCB7]/80
+  bg-[#FFFCF8] px-4 py-3
+  text-[#5F5555]
+  shadow-[0_12px_28px_rgba(95,85,85,0.12)]
+  transition duration-300
+  hover:-translate-y-[1px]
+  hover:border-[#7FA7A1]
+  hover:bg-[#E8F5F3]
+  hover:shadow-[0_16px_36px_rgba(95,85,85,0.16)]
+  md:px-5 md:py-3.5
+"
+    >
+      <span className="font-montserrat text-[13px] leading-none tracking-[0.14em] md:text-[15px]">
+        NEXT
+      </span>
+
+      <span className="relative block h-px w-7 bg-[#6A5C5C] transition duration-300 group-hover/next:w-9">
+        <span className="absolute right-0 top-1/2 h-px w-2.5 origin-right -translate-y-1/2 rotate-[35deg] bg-[#6A5C5C]" />
+      </span>
+    </Link>
+  </div>
+</div>
             </div>
           </BlurIn>
         </div>

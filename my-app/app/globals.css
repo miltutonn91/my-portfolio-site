@@ -6,10 +6,13 @@
 /* ------------------------------
   Font
 ------------------------------ */
+
 body {
-  font-family: var(--font-dm-sans), var(--font-noto-sans-jp), system-ui, sans-serif;
+  font-family: var(--font-dm-sans), var(--font-noto-sans-jp), system-ui,
+    sans-serif;
   color: #2f2f2f;
 }
+
 .font-hina {
   font-family: var(--font-hina-mincho), serif;
 }
@@ -18,12 +21,13 @@ body {
   font-family: var(--font-aboreto), serif;
 }
 
-.font-marcellus {
-  font-family: var(--font-marcellus), serif;
-}
 
 .font-yakuhan {
   font-family: "YakuHanJP", system-ui, sans-serif;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 /* ------------------------------
@@ -33,16 +37,16 @@ body {
 /* 大見出し：About / Works / Contact */
 .section-heading {
   font-family: var(--font-aboreto), serif;
-  font-size: 2.5rem; /* 40px */
-  line-height: 1.1;
-  letter-spacing: 0.14em;
+  font-size: 2rem; /* 32px */
+  letter-spacing: 0.12em;
   color: #5f5555;
   font-weight: 400;
 }
 
 @media screen and (min-width: 768px) {
   .section-heading {
-    font-size: 2rem; /* 56px */
+    font-size: 2.5rem; /* 40px */
+    letter-spacing: 0.14em;
   }
 }
 
@@ -51,7 +55,7 @@ body {
   font-family: var(--font-aboreto), serif;
   font-size: 1.625rem; /* 26px */
   line-height: 1.25;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: #5f5555;
   font-weight: 400;
 }
@@ -59,101 +63,92 @@ body {
 @media screen and (min-width: 768px) {
   .subsection-heading {
     font-size: 2rem; /* 32px */
+    letter-spacing: 0.12em;
   }
 }
 
-/* アコーディオン内の項目名：Illustrator / Photoshop / Figma / HTML / CSS など */
+/* Worksカテゴリ見出し */
 .item-heading {
   display: block;
   font-family: "YakuHanJP", var(--font-noto-sans-jp), system-ui, sans-serif;
-  font-size: 0.875rem; /* 14px */
+  font-size: 1rem; /* 16px */
   line-height: 1.75;
-  letter-spacing: 0.06em;
-  color: #6A5C5C;
+  letter-spacing: 0.05em;
+  color: #6a5c5c;
   font-weight: 600;
 }
 
 @media screen and (min-width: 768px) {
   .item-heading {
-    font-size: 1rem; 
+    font-size: 1.125rem; /* 18px */
   }
 }
 
-/* 項目見出し：Web design / Web development / 粘り強さ / 洞察力 / 探究心 / 作品カードタイトル */
+/* スキル見出し：Web design / Web development */
 .category-heading {
   font-family: "YakuHanJP", var(--font-noto-sans-jp), system-ui, sans-serif;
-  font-size: 1rem; 
+  font-size: 1.125rem; /* 18px */
   line-height: 1.75;
   letter-spacing: 0.05em;
-  color: #6A5C5C;
+  color: #6a5c5c;
   font-weight: 600;
 }
 
 @media screen and (min-width: 768px) {
   .category-heading {
-    font-size: 1.5rem; /* 18px */
+    font-size: 1.375rem; /* 22px */
   }
 }
+
+/* 強み見出し */
+.meta-heading {
+  font-family: "YakuHanJP", var(--font-noto-sans-jp), system-ui, sans-serif;
+  font-size: 1rem; /* 16px */
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  color: #6a5c5c;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .meta-heading {
+    font-size: 1.25rem; /* 20px */
+  }
+}
+
+/* 作品詳細 */
+.works-heading {
+  font-family: "YakuHanJP", var(--font-noto-sans-jp), system-ui, sans-serif;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  color: #6a5c5c;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .works-heading {
+    font-size: 1rem; /* 16px */
+  }
+}
+
 /* 本文：About / Skills / Strengths 共通 */
 .body-text {
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
-  font-size: 0.875rem; /* 14px */
+  font-family: var(--font-dm-sans), var(--font-noto-sans-jp), system-ui,
+    sans-serif;
+  font-size: 0.8125rem; /* 13px */
   line-height: 2;
   letter-spacing: 0.04em;
-  color: #2F2f2f;
+  color: #2f2f2f;
   font-weight: 400;
 }
-.fv-title-trace {
-  opacity: 0;
-  clip-path: inset(0 100% 0 0);
-}
 
-.fv-title-trace--first {
-  animation: fvTitleTrace 1500ms cubic-bezier(0.22, 1, 0.36, 1)
-    800ms forwards;
-}
-
-.fv-title-trace--second {
-  animation: fvTitleTrace 1500ms cubic-bezier(0.22, 1, 0.36, 1)
-    1400ms forwards;
-}
-
-.fv-title-sub {
-  opacity: 0;
-  transform: translateY(6px);
-  animation: fvTitleSub 900ms cubic-bezier(0.22, 1, 0.36, 1)
-    2500ms forwards;
-}
-
-@keyframes fvTitleTrace {
-  0% {
-    opacity: 0;
-    clip-path: inset(0 100% 0 0);
-    filter: blur(4px);
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-    clip-path: inset(0 0 0 0);
-    filter: blur(0);
+@media screen and (min-width: 768px) {
+  .body-text {
+    font-size: 0.9375rem; /* 15px */
   }
 }
 
-@keyframes fvTitleSub {
-  0% {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* ------------------------------
   Utility
 ------------------------------ */
@@ -227,7 +222,7 @@ body {
 }
 
 .soft-gradient--left::after {
-  top: 64em;
+  top: 64rem;
   left: 15%;
   width: 150px;
   height: 150px;
@@ -354,6 +349,11 @@ body {
 .animate-scrollArrow {
   animation: scrollArrow 1.7s ease-in-out infinite;
 }
+
+/* ------------------------------
+  Heading Line Decoration
+------------------------------ */
+
 .subsection-heading--line {
   display: flex;
   align-items: center;
@@ -374,6 +374,7 @@ body {
     width: 64px;
   }
 }
+
 .subsection-heading--after-line {
   display: flex;
   align-items: center;
@@ -388,6 +389,11 @@ body {
   background: rgba(162, 134, 134, 0.45);
   flex: 1;
 }
+
+/* ------------------------------
+  Custom Cursor
+------------------------------ */
+
 @media (min-width: 768px) {
   body {
     cursor: none;
@@ -397,5 +403,106 @@ body {
   button,
   [role="button"] {
     cursor: none;
+  }
+}
+
+/* =========================
+  Opening Loader
+========================= */
+
+.opening-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 28% 30%,
+      rgba(239, 212, 216, 0.36),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 72% 68%,
+      rgba(213, 234, 236, 0.28),
+      transparent 32%
+    ),
+    linear-gradient(135deg, #fffdfc 0%, #fbf7f2 52%, #f8eff1 100%);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.opening-loader.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.opening-loader__inner {
+  text-align: center;
+  color: #5f5555;
+}
+
+.opening-loader__text {
+  margin: 0;
+  font-family: var(--font-aboreto), serif;
+  font-size: clamp(1.1rem, 3.8vw, 2rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: 0.08em;
+  color: #5f5555;
+  white-space: nowrap;
+}
+
+.opening-loader__text--second {
+  margin-top: 0.2em;
+}
+
+.opening-loader__char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(8px);
+  filter: blur(4px);
+  animation: openingCharFade 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes openingCharFade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* ------------------------------
+  FV Site Enter
+------------------------------ */
+
+.fv-site-enter {
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(8px);
+  animation: fvSiteEnter 1000ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes fvSiteEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 }

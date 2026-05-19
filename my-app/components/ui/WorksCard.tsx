@@ -50,7 +50,7 @@ export default function WorkCard({
 
       <div className="relative mt-5">
         <div className="mb-3">
-          <span className="text-[14px] font-medium tracking-[0.1em] text-[#9ABCB7]">
+          <span className="text-[12px] font-medium tracking-[0.1em] text-[#9ABCB7] md:text-[14px]">
             {description}
           </span>
         </div>
@@ -59,7 +59,7 @@ export default function WorkCard({
   href={detailLink}
   className="group/title inline-block cursor-pointer"
 >
-  <h3 className="今のclassNameそのまま">
+  <h3 className="item-heading">
     <span className="relative">
       {title}
       <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-[#A28686]/60 transition-transform duration-300 group-hover/title:scale-x-100" />
@@ -68,7 +68,7 @@ export default function WorkCard({
 </Link>
 <div className="mt-5 flex flex-col gap-4">
   {/* 外部リンク：左下にまとめる */}
-  <div className="flex flex-wrap items-center gap-3">
+  <div className="flex flex-wrap items-center gap-6">
     {siteUrl && (
       <Button asChild variant="works" size="sm">
         <a

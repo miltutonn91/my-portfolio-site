@@ -56,18 +56,18 @@ const menuDotClass = `
         `}
       >
         <span
-          className={`absolute block h-[1.1px] w-6 bg-[#5F5555] transition-all duration-300 ${
-            isMenuOpen ? "rotate-45" : "-translate-y-2"
+          className={`absolute block h-[1.3px] w-7 bg-[#5F5555] transition-all duration-300 ${
+            isMenuOpen ? "rotate-45" : "-translate-y-2.5"
           }`}
         />
         <span
-          className={`absolute block h-[1.1px] w-6 bg-[#5F5555] transition-all duration-300 ${
+          className={`absolute block h-[1.3px] w-7 bg-[#5F5555] transition-all duration-300 ${
             isMenuOpen ? "opacity-0" : "opacity-100"
           }`}
         />
         <span
-          className={`absolute block h-[1.1px] w-6 bg-[#5F5555] transition-all duration-300 ${
-            isMenuOpen ? "-rotate-45" : "translate-y-2"
+          className={`absolute block h-[1.3px] w-7 bg-[#5F5555] transition-all duration-300 ${
+            isMenuOpen ? "-rotate-45" : "translate-y-2.5"
           }`}
         />
       </button>
@@ -120,7 +120,7 @@ const menuDotClass = `
 
   <div className="relative z-[1]">
 
-    <ul className="flex flex-col gap-8">
+    <ul className="flex flex-col gap-10">
       {(isAboutPage || isWorksArea) && (
         <li
           className={`
@@ -135,8 +135,8 @@ const menuDotClass = `
           <Link href="/" onClick={() => setIsMenuOpen(false)} className={menuLinkClass}>
   <span className={menuDotClass} />
   <span className="flex flex-col gap-1">
-    <span className="text-[20px] tracking-[0.14em] mb-1">Top</span>
-    <span className="text-[11px] tracking-[0.12em] text-[#9A8D8D]">
+    <span className="text-[22px] tracking-[0.14em] mb-1">Top</span>
+    <span className="text-[13px] tracking-[0.12em] text-[#9A8D8D]">
       ホーム
     </span>
   </span>
@@ -161,9 +161,9 @@ const menuDotClass = `
   className={menuLinkClass}
 >
   <span className={menuDotClass} />
-  <span className="flex flex-col gap-1">
-    <span className="text-[20px] tracking-[0.14em] mb-1">Works</span>
-    <span className="text-[11px] tracking-[0.12em] text-[#A28686]">
+  <span className="flex flex-col gap-2">
+    <span className="text-[22px] tracking-[0.14em] mb-1">Works</span>
+    <span className="text-[13px] tracking-[0.12em] text-[#A28686]">
       制作したもの
     </span>
   </span>
@@ -184,9 +184,9 @@ const menuDotClass = `
         >
           <Link href="/about" onClick={() => setIsMenuOpen(false)} className={menuLinkClass}>
   <span className={menuDotClass} />
-  <span className="flex flex-col gap-1">
-    <span className="text-[20px] tracking-[0.14em] mb-1">About</span>
-    <span className="text-[11px] tracking-[0.12em] text-[#A28686]">
+  <span className="flex flex-col gap-2">
+    <span className="text-[22px] tracking-[0.14em] mb-1">About</span>
+    <span className="text-[13px] tracking-[0.12em] text-[#A28686]">
       わたしのこと
     </span>
   </span>
@@ -206,9 +206,9 @@ const menuDotClass = `
       >
         <Link href="#contact" onClick={() => setIsMenuOpen(false)} className={menuLinkClass}>
   <span className={menuDotClass} />
-  <span className="flex flex-col gap-1">
-    <span className="text-[19px] tracking-[0.16em]">Contact</span>
-    <span className="text-[11px] tracking-[0.12em] text-[#A28686]">
+  <span className="flex flex-col gap-2">
+    <span className="text-[22px] tracking-[0.16em]">Contact</span>
+    <span className="text-[13px] tracking-[0.12em] text-[#A28686]">
       お問い合わせ
     </span>
   </span>

@@ -16,7 +16,7 @@ function StrengthNumber({
   return (
     <div
       className="
-        relative flex h-[52px] w-[52px] shrink-0 items-center justify-center
+        relative flex h-[48px] w-[48px] shrink-0 items-center justify-center
         md:h-[58px] md:w-[58px]
       "
     >
@@ -58,7 +58,7 @@ function StrengthNumber({
 
       <span
         className={`
-          font-aboreto font-bold botext-[20px] leading-none tracking-[0.02em]
+          font-aboreto text-[20px] font-bold leading-none tracking-[0.02em]
           text-[#9ABCB7]
           transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
           md:text-[22px]
@@ -160,8 +160,9 @@ export default function Strengths() {
               >
                 <div className="h-[1px] bg-[rgba(0,0,0,0.1)]" />
 
-                <div className="flex flex-col gap-5 md:flex-row md:items-start md:gap-[56px]">
-                  <div className="flex w-full items-center gap-4 md:w-[230px] md:shrink-0">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-[230px_1fr] md:items-start md:gap-x-[56px] md:gap-y-0">
+                  {/* 左：ナンバー・線・題名 */}
+                  <div className="flex items-center gap-4 md:h-[58px]">
                     <StrengthNumber
                       number={strength.number}
                       isVisible={isVisible}
@@ -170,12 +171,13 @@ export default function Strengths() {
 
                     <span className="hidden h-px w-7 bg-[#A28686]/45 md:block" />
 
-                    <h3 className="item-heading">
-                      {strength.title}
-                    </h3>
+                    <h3 className="meta-heading m-0">
+  {strength.title}
+</h3>
                   </div>
 
-                  <p className="body-text">
+                  {/* 右：本文 */}
+                  <p className="body-text m-0 md:pt-[13px]">
                     {strength.body}
                   </p>
                 </div>

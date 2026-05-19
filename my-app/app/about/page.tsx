@@ -55,7 +55,7 @@ export default function AboutPage() {
 
             {/* 写真＋本文だけFadeIn */}
             <FadeIn>
-  <div className="flex flex-col items-stretch justify-between gap-12 md:flex-row md:gap-20">
+  <div className="flex flex-col items-center justify-between gap-12 md:flex-row md:items-stretch md:gap-20">
               
                 {/* 画像 */}
                 <div className="flex items-stretch justify-center md:w-1/2">
@@ -72,9 +72,9 @@ export default function AboutPage() {
                 </div>
 
                 {/* テキスト */}
-                <div className="flex flex-col justify-center text-left md:w-1/2">
+                <div className="mx-auto flex w-full max-w-[520px] flex-col justify-center text-left md:mx-0 md:w-1/2 md:max-w-none">
                   <div className="mb-12 flex items-baseline gap-[14px]">
-                    <p className="text-[24px] font-bold leading-none tracking-[0.04em] text-[#5F5555]">
+                    <p className="text-[20px] font-bold leading-none tracking-[0.04em] text-[#5F5555] md:text-[24px]">
                       梅田 実沙
                     </p>
 
@@ -88,11 +88,11 @@ export default function AboutPage() {
                   </p>
 
                   <p className="body-text mb-6 max-w-[520px] whitespace-pre-line">
-                    ものづくりが好きで、Webデザインに興味を持ったことをきっかけに、2024年にデジタルハリウッド by LIGへ入学しました。
+動きや操作を通して情報を伝えられるWebの表現に興味を持ち、Webデザインを学ぶことを決意しました。
 
-                    Web制作を進める中で、デザインの意図を正しく汲み取り、ユーザーに伝わる形へ実装するフロントエンドの領域に興味を持つようになりました。
+見た目の美しさだけでなく、情報の伝わり方や使いやすさを支える役割があることを学ぶ中で、フロントエンドエンジニアを目指すようになりました。
 
-                    現在は、細部まで丁寧に意識を向けながら、ユーザビリティを支えられるフロントエンドエンジニアを目指して転職活動中です。
+どんな小さなことにも丁寧に向き合い、誠実に取り組む姿勢を大切にしています。
                   </p>
 
                   <p className="body-text max-w-[520px] whitespace-pre-line">

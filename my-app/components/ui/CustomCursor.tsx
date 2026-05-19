@@ -70,8 +70,8 @@ export default function CustomCursor() {
           md:block
         "
         style={{
-          width: isHover ? 66 : 0,
-          height: isHover ? 66 : 0,
+          width: isHover ? 44 : 0,
+          height: isHover ? 44 : 0,
           opacity: isHover ? 1 : 0,
           transform: `translate(${position.x - (isHover ? 33 : 0)}px, ${
             position.y - (isHover ? 33 : 0)

@@ -1,20 +1,35 @@
+'use client';
+
+import { useState } from 'react';
 import FV from '@/components/FV';
 import ScrollTopButton from '@/components/ui/ScrollTopButton';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
-import HamburgerMenu from "@/components/ui/HamburgerMenu";
+import HamburgerMenu from '@/components/ui/HamburgerMenu';
+import LoadingScreen from '@/components/ui/LoadingScreen';
 
 export default function Page() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <>
-      <main className="bg-white text-gray-800">
-        <FV />
-      </main>
-      <div className="md:hidden">
-        <HamburgerMenu />
-      </div>
+      {!isLoaded && (
+        <LoadingScreen onFinish={() => setIsLoaded(true)} />
+      )}
 
-      <ScrollIndicator hideOnDesktopFv />
-      <ScrollTopButton />
+      {isLoaded && (
+        <main className="fv-site-enter bg-white text-gray-800">
+          <FV />
+        </main>
+      )}
+
+      {isLoaded && (
+        <div className="lg:hidden">
+          <HamburgerMenu />
+        </div>
+      )}
+
+      {isLoaded && <ScrollIndicator hideOnDesktopFv />}
+      {isLoaded && <ScrollTopButton />}
     </>
   );
 }

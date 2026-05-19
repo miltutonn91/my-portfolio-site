@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Hina_Mincho, Aboreto, Marcellus,DM_Sans} from "next/font/google";
+import { Hina_Mincho, Aboreto,DM_Sans,Noto_Sans_JP, Montserrat} from "next/font/google";
 import "yakuhanjp/dist/css/yakuhanjp.css";
 import "./globals.css";
-import CustomCursor from "@/components/CustomCursor";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 const hinaMincho = Hina_Mincho({
   weight: "400",
@@ -16,16 +16,22 @@ const aboreto = Aboreto({
   variable: "--font-aboreto",
 });
 
-const marcellus = Marcellus({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-marcellus",
-});
-
 const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+  variable: "--font-dm-sans",
+});
+
+const notoSansJp = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-noto-sans-jp",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -45,8 +51,9 @@ export default function RootLayout({
         className={`
           ${hinaMincho.variable}
           ${aboreto.variable}
-          ${marcellus.variable}
           ${dmSans.variable}   
+          ${notoSansJp.variable}
+          ${montserrat.variable}
           antialiased
         `}
       >

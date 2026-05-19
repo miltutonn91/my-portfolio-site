@@ -24,7 +24,7 @@ export default function Footer() {
         <Link
           href="/"
           onClick={(e) => handlePageLinkClick(e, "/")}
-          className="global-nav-text hover:opacity-60"
+          className="text-[13px] hover:opacity-60 md:text-[15px]"
         >
           Top
         </Link>
@@ -32,7 +32,7 @@ export default function Footer() {
         <Link
           href="/works"
           onClick={(e) => handlePageLinkClick(e, "/works")}
-          className="global-nav-text hover:opacity-60"
+          className="text-[13px] hover:opacity-60 md:text-[15px]"
         >
           Works
         </Link>
@@ -40,13 +40,13 @@ export default function Footer() {
         <Link
           href="/about"
           onClick={(e) => handlePageLinkClick(e, "/about")}
-          className="global-nav-text hover:opacity-60"
+          className="text-[13px] hover:opacity-60 md:text-[15px]"
         >
           About
         </Link>
       </nav>
 
-      <p className="text-[0.75rem] tracking-[0.04em] text-gray-400">
+      <p className="text-[10.5px] tracking-[0.04em] text-gray-400">
         © 2026 MISA UMEDA
       </p>
     </footer>
