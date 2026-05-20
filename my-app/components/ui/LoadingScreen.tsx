@@ -10,10 +10,22 @@ type LoadingScreenProps = {
 };
 
 export default function LoadingScreen({ onFinish }: LoadingScreenProps) {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [isLeaving, setIsLeaving] = useState(false);
 
   useEffect(() => {
+    const hasShownLoading = sessionStorage.getItem("hasShownLoading");
+
+    // すでに表示済みなら、ローディングを出さずにすぐ完了扱いにする
+    if (hasShownLoading) {
+      onFinish();
+      return;
+    }
+
+    // 初回だけ表示する
+    setIsVisible(true);
+    sessionStorage.setItem("hasShownLoading", "true");
+
     const leaveTimer = window.setTimeout(() => {
       setIsLeaving(true);
       onFinish();

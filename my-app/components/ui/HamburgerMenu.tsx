@@ -28,14 +28,14 @@ export default function HamburgerMenu({
   const contactHref = isWorksDetailPage ? "/works#contact" : "#contact";
 
   const menuLinkClass = `
-  group inline-flex w-fit items-center gap-3
+  group inline-flex w-fit items-start gap-3
   text-[1.125rem] leading-none tracking-[0.14em] text-[#4F4646]
   transition duration-300
   hover:text-[#9ABCB7]
 `;
 
   const menuDotClass = `
-  h-1.5 w-1.5 rounded-full bg-[#9ABCB7]
+  mt-[0.55rem] h-1.5 w-1.5 rounded-full bg-[#9ABCB7]
   opacity-0 transition duration-300
   group-hover:opacity-100
 `;
