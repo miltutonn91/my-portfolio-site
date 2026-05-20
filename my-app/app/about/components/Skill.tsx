@@ -1,6 +1,6 @@
 "use client";
 
-import FadeIn from "@/components/FadeIn";
+import FadeIn from "@/components/ui/FadeIn";
 import {
   SiHtml5,
   SiCss3,
@@ -39,7 +39,7 @@ const designSkills: SkillItem[] = [
 
 export default function Skill() {
   return (
-    <section id="skill" className="relative px-5 py-8 md:px-10 md:py-28">
+    <section id="skill" className="relative px-5 py-8 md:px-10 md:py-10">
       <div className="mx-auto w-full max-w-[1120px]">
         {/* タイトル */}
         <div className="mb-12 md:mb-16">
@@ -51,17 +51,10 @@ export default function Skill() {
         <FadeIn>
           <div className="grid gap-8 md:grid-cols-2 md:gap-10">
             {/* Web Development */}
-            <div
-              className="
-                border border-[#DCD8D0]/80 bg-[#FFFDFC]/55
-                px-6 py-8
-                shadow-[0_18px_45px_rgba(95,85,85,0.06)]
-                md:px-8 md:py-10
-              "
-            >
+            <div className="border border-[#DCD8D0]/80 bg-[#FFFDFC]/55 px-6 py-8 shadow-[0_18px_45px_rgba(95,85,85,0.06)] md:px-8 md:py-10">
               <h3 className="category-heading mb-1">Web development</h3>
 
-              <p className="mb-7 text-[12px] font-bold tracking-[0.14em] text-[#9ABCB7]">
+              <p className="mb-7 text-[0.8125rem] font-bold tracking-[0.14em] text-[#9ABCB7]">
                 開発
               </p>
 
@@ -76,29 +69,14 @@ export default function Skill() {
                   return (
                     <span
                       key={skill.name}
-                      className="
-                        inline-flex min-h-[34px] min-w-0 flex-wrap items-center justify-center
-                        gap-x-1.5 gap-y-1
-                        rounded-full border border-[#D8D1CC]/80 bg-[#FFFDFC]/80
-                        px-2.5 py-1.5
-                        text-[12px] tracking-[0.08em] text-[#5F5555]
-                        shadow-[0_8px_20px_rgba(95,85,85,0.04)]
-                        md:flex-nowrap md:justify-start md:gap-2 md:px-3.5
-                      "
+                      className="inline-flex min-h-[34px] min-w-0 flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-[#D8D1CC]/80 bg-[#FFFDFC]/80 px-2.5 py-1.5 text-[0.75rem] tracking-[0.08em] text-[#5F5555] shadow-[0_8px_20px_rgba(95,85,85,0.04)] md:flex-nowrap md:justify-start md:gap-2 md:px-3.5"
                     >
-                      <Icon className="shrink-0 text-[13px] text-[#B99A9E] md:text-[14px]" />
+                      <Icon className="shrink-0 text-[0.8125rem] text-[#B99A9E] md:text-[0.875rem]" />
 
                       <span className="whitespace-nowrap">{skill.name}</span>
 
                       {skill.status === "learning" && (
-                        <span
-                          className="
-                            shrink-0 rounded-full bg-[#9ABCB7]/12
-                            px-1.5 py-[2px]
-                            text-[9px] font-medium tracking-[0.06em] text-[#6F9993]
-                            md:px-2 md:text-[10px]
-                          "
-                        >
+                        <span className="shrink-0 rounded-full bg-[#9ABCB7]/12 px-1.5 py-[2px] text-[0.5625rem] font-medium tracking-[0.06em] text-[#6F9993] md:px-2 md:text-[0.625rem]">
                           learning
                         </span>
                       )}
@@ -109,17 +87,10 @@ export default function Skill() {
             </div>
 
             {/* Web Design */}
-            <div
-              className="
-                border border-[#DCD8D0]/80 bg-[#FFFDFC]/55
-                px-6 py-8
-                shadow-[0_18px_45px_rgba(95,85,85,0.06)]
-                md:px-8 md:py-10
-              "
-            >
+            <div className="border border-[#DCD8D0]/80 bg-[#FFFDFC]/55 px-6 py-8 shadow-[0_18px_45px_rgba(95,85,85,0.06)] md:px-8 md:py-10">
               <h3 className="category-heading mb-1">Web design</h3>
 
-              <p className="mb-7 text-[12px] font-bold tracking-[0.14em] text-[#9ABCB7]">
+              <p className="mb-7 text-[0.8125rem] font-bold tracking-[0.14em] text-[#9ABCB7]">
                 デザイン
               </p>
 
@@ -134,17 +105,9 @@ export default function Skill() {
                   return (
                     <span
                       key={skill.name}
-                      className="
-                        inline-flex min-h-[34px] min-w-0 items-center justify-center
-                        gap-1.5
-                        rounded-full border border-[#D8D1CC]/80 bg-[#FFFDFC]/80
-                        px-2.5 py-1.5
-                        text-[12px] tracking-[0.08em] text-[#5F5555]
-                        shadow-[0_8px_20px_rgba(95,85,85,0.04)]
-                        md:justify-start md:gap-2 md:px-3.5
-                      "
+                      className="inline-flex min-h-[34px] min-w-0 items-center justify-center gap-1.5 rounded-full border border-[#D8D1CC]/80 bg-[#FFFDFC]/80 px-2.5 py-1.5 text-[0.75rem] tracking-[0.08em] text-[#5F5555] shadow-[0_8px_20px_rgba(95,85,85,0.04)] md:justify-start md:gap-2 md:px-3.5 md:text-[0.8125rem]"
                     >
-                      <Icon className="shrink-0 text-[13px] text-[#B99A9E] md:text-[14px]" />
+                      <Icon className="shrink-0 text-[0.8125rem] text-[#B99A9E] md:text-[0.875rem]" />
 
                       <span className="whitespace-nowrap">{skill.name}</span>
                     </span>

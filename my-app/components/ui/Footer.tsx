@@ -1,5 +1,3 @@
-// components/ui/Footer.tsx
-
 "use client";
 
 import Link from "next/link";
@@ -24,7 +22,7 @@ export default function Footer() {
         <Link
           href="/"
           onClick={(e) => handlePageLinkClick(e, "/")}
-          className="text-[13px] hover:opacity-60 md:text-[15px]"
+          className="text-[0.8125rem] hover:opacity-60 md:text-[0.9375rem]"
         >
           Top
         </Link>
@@ -32,7 +30,7 @@ export default function Footer() {
         <Link
           href="/works"
           onClick={(e) => handlePageLinkClick(e, "/works")}
-          className="text-[13px] hover:opacity-60 md:text-[15px]"
+          className="text-[0.8125rem] hover:opacity-60 md:text-[0.9375rem]"
         >
           Works
         </Link>
@@ -40,13 +38,13 @@ export default function Footer() {
         <Link
           href="/about"
           onClick={(e) => handlePageLinkClick(e, "/about")}
-          className="text-[13px] hover:opacity-60 md:text-[15px]"
+          className="text-[0.8125rem] hover:opacity-60 md:text-[0.9375rem]"
         >
           About
         </Link>
       </nav>
 
-      <p className="text-[10.5px] tracking-[0.04em] text-gray-400">
+      <p className="text-[0.6563rem] tracking-[0.04em] text-gray-400">
         © 2026 MISA UMEDA
       </p>
     </footer>

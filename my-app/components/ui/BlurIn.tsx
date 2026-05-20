@@ -46,15 +46,11 @@ export default function BlurIn({
   return (
     <div
       ref={ref}
-      className={`
-        transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-        ${
-          isVisible
-            ? "scale-100 opacity-100 blur-0"
-            : "scale-[0.96] opacity-0 blur-[8px]"
-        }
-        ${className}
-      `}
+      className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        isVisible
+          ? "blur-0 scale-100 opacity-100"
+          : "scale-[0.96] opacity-0 blur-[8px]"
+      } ${className} `}
     >
       {children}
     </div>

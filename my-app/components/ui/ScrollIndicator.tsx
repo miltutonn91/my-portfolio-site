@@ -1,5 +1,3 @@
-// components/ui/ScrollIndicator.tsx
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -50,30 +48,19 @@ export default function ScrollIndicator({
 
   return (
     <div
-      className={`
-        fixed right-1 top-1/2 z-30
-        flex w-10 -translate-y-1/2 flex-col items-center gap-3
-        transition-all duration-500 ease-out md:right-5
-        ${
-          shouldHide
-            ? "pointer-events-none opacity-0"
-            : "pointer-events-none opacity-100"
-        }
-      `}
+      className={`fixed top-1/2 right-1 z-30 flex w-10 -translate-y-1/2 flex-col items-center gap-3 transition-all duration-500 ease-out md:right-5 ${
+        shouldHide
+          ? "pointer-events-none opacity-0"
+          : "pointer-events-none opacity-100"
+      } `}
     >
-      <p
-  className="
-    mb-9 rotate-90 whitespace-nowrap
-    font-montserrat
-    text-[10px] tracking-[0.22em] text-[#5F5555]
-  "
->
-  SCROLL
-</p>
+      <p className="font-montserrat mb-9 rotate-90 text-[0.625rem] tracking-[0.22em] whitespace-nowrap text-[#5F5555]">
+        SCROLL
+      </p>
 
       <div className="flex flex-col items-center gap-2">
         <div className="relative h-[52px] w-px overflow-hidden bg-[#CFC6BE]">
-          <span className="absolute left-0 top-0 block h-[18px] w-px animate-scrollLine bg-[#5F5555]" />
+          <span className="animate-scrollLine absolute top-0 left-0 block h-[18px] w-px bg-[#5F5555]" />
         </div>
 
         <ChevronDown

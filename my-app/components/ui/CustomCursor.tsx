@@ -50,12 +50,7 @@ export default function CustomCursor() {
     <>
       {/* 通常時の小さい丸 */}
       <div
-        className="
-          pointer-events-none fixed left-0 top-0 z-[9999]
-          hidden h-2.5 w-2.5 rounded-full bg-[#4F4646]
-          transition-transform duration-75
-          md:block
-        "
+        className="pointer-events-none fixed top-0 left-0 z-[9999] hidden h-2.5 w-2.5 rounded-full bg-[#4F4646] transition-transform duration-75 md:block"
         style={{
           transform: `translate(${position.x - 5}px, ${position.y - 5}px)`,
         }}
@@ -63,12 +58,7 @@ export default function CustomCursor() {
 
       {/* hover時の大きい丸 */}
       <div
-        className="
-          pointer-events-none fixed left-0 top-0 z-[9998]
-          hidden rounded-full bg-[#9ABCB7]/40
-          transition-[width,height,transform,opacity] duration-300 ease-out
-          md:block
-        "
+        className="pointer-events-none fixed top-0 left-0 z-[9998] hidden rounded-full bg-[#9ABCB7]/40 transition-[width,height,transform,opacity] duration-300 ease-out md:block"
         style={{
           width: isHover ? 44 : 0,
           height: isHover ? 44 : 0,

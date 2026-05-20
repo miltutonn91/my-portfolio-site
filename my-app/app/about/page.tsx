@@ -1,14 +1,11 @@
-'use client';
-
-import Image from 'next/image';
-import Skill from './components/SkillAccordion';
-import Strengths from './components/Strengths';
-import Contact from '@/components/Contact';
-import Footer from '@/components/ui/Footer';
-import HamburgerMenu from '@/components/ui/HamburgerMenu';
-import ScrollTopButton from '@/components/ui/ScrollTopButton';
-import ScrollIndicator from '@/components/ui/ScrollIndicator';
-import FadeIn from '@/components/FadeIn';
+import Skill from "./components/Skill";
+import Strengths from "./components/Strengths";
+import AboutProfile from "./components/AboutProfile";
+import Contact from "@/components/Contact";
+import Footer from "@/components/ui/Footer";
+import HamburgerMenu from "@/components/ui/HamburgerMenu";
+import ScrollTopButton from "@/components/ui/ScrollTopButton";
+import ScrollIndicator from "@/components/ui/ScrollIndicator";
 
 export default function AboutPage() {
   return (
@@ -18,93 +15,30 @@ export default function AboutPage() {
       <main className="relative overflow-hidden bg-[#FBF7F2] text-[#6A5C5C]">
         {/* About用：全体にオレンジを感じる淡いグラデーション */}
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-          {/* 全体のベースグラデーション */}
           <div className="absolute inset-0 bg-[linear-gradient(135deg,#FBF3EC_0%,#FAF6F1_42%,#F8EFE7_100%)]" />
 
-          {/* 左上〜中央：オレンジベージュ */}
-          <div className="absolute left-[-18%] top-[-6%] h-[760px] w-[760px] rounded-full bg-[#F1D4B8]/54 blur-[145px]" />
-
-          {/* 右上：ピーチピンク */}
-          <div className="absolute right-[-18%] top-[4%] h-[600px] w-[600px] rounded-full bg-[#EFD4D8]/34 blur-[130px]" />
-
-          {/* 中央：クリームオレンジを広めに */}
-          <div className="absolute left-[20%] top-[34%] h-[680px] w-[680px] rounded-full bg-[#F4E2D0]/44 blur-[140px]" />
-
-          {/* 左下：あたたかい余韻 */}
+          <div className="absolute top-[-6%] left-[-18%] h-[760px] w-[760px] rounded-full bg-[#F1D4B8]/54 blur-[145px]" />
+          <div className="absolute top-[4%] right-[-18%] h-[600px] w-[600px] rounded-full bg-[#EFD4D8]/34 blur-[130px]" />
+          <div className="absolute top-[34%] left-[20%] h-[680px] w-[680px] rounded-full bg-[#F4E2D0]/44 blur-[140px]" />
           <div className="absolute bottom-[-22%] left-[-10%] h-[620px] w-[620px] rounded-full bg-[#F1D4B8]/38 blur-[135px]" />
+          <div className="absolute right-[-10%] bottom-[-16%] h-[460px] w-[460px] rounded-full bg-[#E8F2D7]/18 blur-[120px]" />
 
-          {/* 右下：ほんの少し抜け感 */}
-          <div className="absolute bottom-[-16%] right-[-10%] h-[460px] w-[460px] rounded-full bg-[#E8F2D7]/18 blur-[120px]" />
-
-          {/* 白なじませは弱め */}
           <div className="absolute inset-0 bg-white/3" />
         </div>
 
-        {/* ===== 自己紹介 ===== */}
         <section
           id="top"
           className="relative z-[1] px-5 py-14 md:px-10 md:py-[88px]"
         >
           <div className="mx-auto w-full max-w-[1120px]">
-            {/* タイトルにはFadeInをかけない */}
             <div className="mb-16 text-center md:mb-20">
-              <h1 className="section-heading">
-                About
-              </h1>
+              <h1 className="section-heading">About</h1>
             </div>
 
-            {/* 写真＋本文だけFadeIn */}
-            <FadeIn>
-  <div className="flex flex-col items-center justify-between gap-12 md:flex-row md:items-stretch md:gap-20">
-              
-                {/* 画像 */}
-                <div className="flex items-stretch justify-center md:w-1/2">
-                  <div className="relative h-[370px] w-[280px] overflow-hidden bg-[#FFFDF8]">
-                    <Image
-                      src="/images/about/profile-detail.jpg"
-                      alt="プロフィール写真"
-                      fill
-                      priority
-                      className="object-cover"
-                      sizes="280px"
-                    />
-                  </div>
-                </div>
-
-                {/* テキスト */}
-                <div className="mx-auto flex w-full max-w-[520px] flex-col justify-center text-left md:mx-0 md:w-1/2 md:max-w-none">
-                  <div className="mb-12 flex items-baseline gap-[14px]">
-                    <p className="text-[20px] font-bold leading-none tracking-[0.04em] text-[#5F5555] md:text-[24px]">
-                      梅田 実沙
-                    </p>
-
-                    <p className="text-[13px] font-normal leading-[24px] tracking-[0.12em] text-[#6A5C5C]">
-                      MISA UMEDA
-                    </p>
-                  </div>
-
-                  <p className="body-text mb-6 max-w-[520px] whitespace-pre-line">
-                    1998年生まれ。愛知県出身。職業は看護師です。
-                  </p>
-
-                  <p className="body-text mb-6 max-w-[520px] whitespace-pre-line">
-動きや操作を通して情報を伝えられるWebの表現に興味を持ち、Webデザインを学ぶことを決意しました。
-
-見た目の美しさだけでなく、情報の伝わり方や使いやすさを支える役割があることを学ぶ中で、フロントエンドエンジニアを目指すようになりました。
-
-どんな小さなことにも丁寧に向き合い、誠実に取り組む姿勢を大切にしています。
-                  </p>
-
-                  <p className="body-text max-w-[520px] whitespace-pre-line">
-                    趣味は写真を撮ることと音楽鑑賞です。休日はカメラを持って季節の植物や街並みを撮影したり、ライブ会場で音楽に触れたりしながら過ごしています。
-                  </p>
-                </div>
-              </div>
-            </FadeIn>
+            <AboutProfile />
           </div>
         </section>
 
-        {/* Skill / Strengthsはここでは包まない */}
         <Skill />
 
         <Strengths />

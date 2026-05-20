@@ -44,15 +44,7 @@ export default function FadeIn({
   return (
     <div
       ref={ref}
-      className={`
-        transition-all duration-[3000ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-        ${
-          isVisible
-            ? "translate-y-0 opacity-100"
-            : "translate-y-10 opacity-0"
-        }
-        ${className}
-      `}
+      className={`transition-all duration-[3000ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} ${className} `}
     >
       {children}
     </div>

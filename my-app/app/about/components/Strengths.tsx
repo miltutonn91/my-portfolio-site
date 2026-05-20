@@ -8,18 +8,9 @@ type StrengthNumberProps = {
   delay?: number;
 };
 
-function StrengthNumber({
-  number,
-  isVisible,
-  delay = 0,
-}: StrengthNumberProps) {
+function StrengthNumber({ number, isVisible, delay = 0 }: StrengthNumberProps) {
   return (
-    <div
-      className="
-        relative flex h-[48px] w-[48px] shrink-0 items-center justify-center
-        md:h-[58px] md:w-[58px]
-      "
-    >
+    <div className="relative flex h-[48px] w-[48px] shrink-0 items-center justify-center md:h-[58px] md:w-[58px]">
       <svg
         viewBox="0 0 52 52"
         className="absolute inset-0 h-full w-full -rotate-90"
@@ -57,17 +48,7 @@ function StrengthNumber({
       </svg>
 
       <span
-        className={`
-          font-aboreto text-[20px] font-bold leading-none tracking-[0.02em]
-          text-[#9ABCB7]
-          transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-          md:text-[22px]
-          ${
-            isVisible
-              ? "translate-y-0 opacity-100"
-              : "translate-y-1 opacity-0"
-          }
-        `}
+        className={`font-aboreto text-[1.25rem] leading-none font-bold tracking-[0.02em] text-[#9ABCB7] transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] md:text-[1.375rem] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"} `}
         style={{
           transitionDelay: `${delay + 500}ms`,
         }}
@@ -125,7 +106,7 @@ export default function Strengths() {
   return (
     <section
       id="strengths"
-      className="relative px-5 py-14 md:px-10 md:py-28"
+      className="relative px-5 pt-14 pb-24 md:px-10 md:pt-22 md:pb-28"
     >
       <div className="mx-auto w-full max-w-6xl">
         {/* タイトル */}
@@ -145,15 +126,11 @@ export default function Strengths() {
             return (
               <div
                 key={strength.number}
-                className={`
-                  flex flex-col gap-5 md:gap-9
-                  transition-all duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-                  ${
-                    isVisible
-                      ? "translate-y-0 opacity-100"
-                      : "translate-y-8 opacity-0"
-                  }
-                `}
+                className={`flex flex-col gap-5 transition-all duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] md:gap-9 ${
+                  isVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-8 opacity-0"
+                } `}
                 style={{
                   transitionDelay: `${delay}ms`,
                 }}
@@ -171,15 +148,11 @@ export default function Strengths() {
 
                     <span className="hidden h-px w-7 bg-[#A28686]/45 md:block" />
 
-                    <h3 className="meta-heading m-0">
-  {strength.title}
-</h3>
+                    <h3 className="meta-heading m-0">{strength.title}</h3>
                   </div>
 
                   {/* 右：本文 */}
-                  <p className="body-text m-0 md:pt-[13px]">
-                    {strength.body}
-                  </p>
+                  <p className="body-text m-0 md:pt-[13px]">{strength.body}</p>
                 </div>
               </div>
             );
