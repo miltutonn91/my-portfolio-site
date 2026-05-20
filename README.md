@@ -38,11 +38,14 @@ https://github.com/miltutonn91/my-portfolio-site
 
 | コマンド | 内容 |
 |---|---|
-| `npm install` | パッケージをインストール |
+| `npm install` | 必要なパッケージをインストール |
 | `npm run dev` | 開発サーバーを起動 |
-| `npm run build` | 本番用にビルド |
+| `npm run build` | 本番環境用にビルド |
 | `npm run start` | ビルド後のアプリを起動 |
 | `npm run lint` | ESLintでコードをチェック |
+| `npm run format` | Prettierでコードを整形 |
+| `npm run format:check` | Prettierで整形ルールに沿っているか確認 |
+| `npm run convert:text-rem` | テキスト関連のpx指定をremに変換する自作スクリプトを実行 |
 
 ---
 
