@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import FadeIn from "@/components/ui/FadeIn";
 
 type HamburgerMenuProps = {
   isAboutPage?: boolean;
@@ -158,7 +157,7 @@ export default function HamburgerMenu({
               className={`transition-all duration-500 ease-out ${isMenuOpen ? "translate-x-0 opacity-100 delay-[380ms]" : "translate-x-4 opacity-0"} `}
             >
               <Link
-                href="#contact"
+                href={contactHref}
                 onClick={() => setIsMenuOpen(false)}
                 className={menuLinkClass}
               >

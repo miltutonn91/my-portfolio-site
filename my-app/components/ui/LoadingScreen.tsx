@@ -23,6 +23,7 @@ export default function LoadingScreen({ onFinish }: LoadingScreenProps) {
     }
 
     // 初回だけ表示する
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsVisible(true);
     sessionStorage.setItem("hasShownLoading", "true");
 
