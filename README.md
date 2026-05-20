@@ -80,3 +80,41 @@ my-portfolio-site/
 │   ├── next.config.ts
 │   └── tsconfig.json
 └── README.md
+```
+
+---
+
+
+## 開発環境構築方法
+
+### 1. リポジトリをクローン
+
+```bash
+git clone https://github.com/miltutonn91/my-portfolio-site.git
+```
+
+### 2. ディレクトリへ移動
+
+```bash
+cd my-portfolio-site/my-app
+```
+
+### 3. パッケージをインストール
+
+```bash
+npm install
+```
+
+### 4. 開発サーバーを起動
+
+```bash
+npm run dev
+```
+
+### 5. ブラウザで確認
+
+```txt
+http://localhost:3000
+```
+
+本サイトは Next.js で制作しているため、ローカル環境で確認する場合はパッケージのインストールと開発サーバーの起動が必要です。
