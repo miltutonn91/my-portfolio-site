@@ -125,7 +125,7 @@ export default function Strengths() {
   return (
     <section
       id="strengths"
-      className="relative px-5 py-20 md:px-10 md:py-28"
+      className="relative px-5 py-14 md:px-10 md:py-28"
     >
       <div className="mx-auto w-full max-w-6xl">
         {/* タイトル */}

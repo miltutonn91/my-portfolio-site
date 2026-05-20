@@ -39,7 +39,7 @@ const designSkills: SkillItem[] = [
 
 export default function Skill() {
   return (
-    <section id="skill" className="relative px-5 py-14 md:px-10 md:py-28">
+    <section id="skill" className="relative px-5 py-8 md:px-10 md:py-28">
       <div className="mx-auto w-full max-w-[1120px]">
         {/* タイトル */}
         <div className="mb-12 md:mb-16">

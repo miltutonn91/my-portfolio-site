@@ -43,7 +43,7 @@ export default function AboutPage() {
         {/* ===== 自己紹介 ===== */}
         <section
           id="top"
-          className="relative z-[1] px-5 py-[72px] md:px-10 md:py-[88px]"
+          className="relative z-[1] px-5 py-14 md:px-10 md:py-[88px]"
         >
           <div className="mx-auto w-full max-w-[1120px]">
             {/* タイトルにはFadeInをかけない */}
