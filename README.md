@@ -53,34 +53,58 @@ https://github.com/miltutonn91/my-portfolio-site
 ## ディレクトリ構成
 
 ```txt
-my-portfolio-site/
-├── my-app/
-│   ├── app/
-│   │   ├── about/
-│   │   │   ├── components/
-│   │   │   └── page.tsx
-│   │   ├── works/
-│   │   │   ├── [id]/
-│   │   │   │   └── page.tsx
-│   │   │   ├── components/
-│   │   │   └── page.tsx
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   ├── components/
-│   │   ├── ui/
-│   │   ├── Contact.tsx
-│   │   └── FV.tsx
-│   ├── data/
-│   │   └── works.ts
-│   ├── lib/
-│   │   └── utils.ts
-│   ├── public/
-│   │   └── images/
-│   ├── package.json
-│   ├── next.config.ts
-│   └── tsconfig.json
-└── README.md
+my-portfoliosite/
+├── .gitignore
+├── README.md
+└── my-app/
+    ├── .gitignore
+    ├── .prettierignore
+    ├── .prettierrc
+    ├── app/
+    │   ├── about/
+    │   │   ├── components/
+    │   │   │   ├── AboutProfile.tsx
+    │   │   │   ├── Skill.tsx
+    │   │   │   └── Strengths.tsx
+    │   │   └── page.tsx
+    │   ├── works/
+    │   │   ├── [id]/
+    │   │   │   └── page.tsx
+    │   │   ├── components/
+    │   │   │   ├── WorksCard.tsx
+    │   │   │   └── WorksDetail.tsx
+    │   │   └── page.tsx
+    │   ├── globals.css
+    │   ├── icon.png
+    │   ├── layout.tsx
+    │   └── page.tsx
+    ├── components/
+    │   ├── ui/
+    │   │   ├── BlurIn.tsx
+    │   │   ├── CustomCursor.tsx
+    │   │   ├── FadeIn.tsx
+    │   │   ├── Footer.tsx
+    │   │   ├── HamburgerMenu.tsx
+    │   │   ├── LoadingScreen.tsx
+    │   │   ├── ScrollIndicator.tsx
+    │   │   ├── ScrollTopButton.tsx
+    │   │   └── button.tsx
+    │   ├── Contact.tsx
+    │   └── FV.tsx
+    ├── data/
+    │   └── works.ts
+    ├── lib/
+    │   └── utils.ts
+    ├── public/
+    │   └── images/
+    ├── scripts/
+    │   └── text-px-to-rem.js
+    ├── components.json
+    ├── eslint.config.mjs
+    ├── next.config.ts
+    ├── package.json
+    ├── postcss.config.mjs
+    └── tsconfig.json
 ```
 
 ---
