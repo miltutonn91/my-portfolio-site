@@ -1,4 +1,4 @@
-# Misa Umeda Portfolio
+# ポートフォリオサイト
 
 ## プロジェクトの概要
 
@@ -29,6 +29,7 @@ https://github.com/miltutonn91/my-portfolio-site
 | Next.js | ルーティング・ページ構成 |
 | Tailwind CSS | スタイリング |
 | Node.js | 開発環境・npm scriptsの実行 |
+| Git / GitHub | バージョン管理・ソースコード管理 |
 | Figma | デザイン作成 |
 | Vercel | デプロイ |
 
