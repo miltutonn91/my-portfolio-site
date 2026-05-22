@@ -20,7 +20,15 @@ https://github.com/miltutonn91/my-portfolio-site
 
 ---
 
-## 主要技術
+## デザインについて
+
+自身が制作において大切にしている「丁寧さ」と「誠実さ」が伝わるよう、落ち着いた配色と余白を活かしたシンプルなデザインにしました。
+
+やわらかな雰囲気の中にも情報の読みやすさを保てるよう、文字のサイズやコントラスト、要素間の余白を意識して整えています。
+
+---
+
+## 主要技術・ツール
 
 | 技術 | 用途 |
 |---|---|
@@ -53,7 +61,7 @@ https://github.com/miltutonn91/my-portfolio-site
 ## ディレクトリ構成
 
 ```txt
-my-portfoliosite/
+my-portfolio-site/
 ├── .gitignore
 ├── README.md
 └── my-app/
